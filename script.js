@@ -1,31 +1,28 @@
-let preview = document.querySelectorAll(".tile");
+let preview = document.querySelectorAll("#tile");
 let heartIcon = document.querySelectorAll(".fa-heart");
+let crl = document.getElementsByClassName("carouselItems");
 
-isExisting = true;
-isCreated = false;
+preview.forEach(function(myTile){
+  myTile.addEventListener("click",function(){
+    let previewScreen = document.createElement("div");
+    previewScreen.setAttribute("class", "container-lg previewScreen d-flex flex-row-reverse bd-highlight");
+    document.body.appendChild(previewScreen);
+    document.body.style.overflow = "hidden";
+    // <button type="button" class="btn-close" aria-label="Close"></button>
 
-// if(isExisting){
-//   preview.addEventListener("click",function(){
-//         console.log("klik!");
-//         let con = document.getElementById("mainContainer");
-//         let navbar = document.getElementById("nav")
-//         const previewTile = document.createElement("div");
-//         previewTile.setAttribute("class","previewTile");
-//         previewTile.setAttribute("id","tileId")
-//         navbar.appendChild(previewTile);
-//         isCreated = true;
-//         const closeButton = document.createElement("button");
-//         closeButton.setAttribute("class","btn-close");
-//         closeButton.setAttribute("id","myCloseBtn");
-//         closeButton.ariaLabel="Close";
-//         closeButton.type="button";
-//         previewTile.appendChild(closeButton);
-//         closeButton.addEventListener("click",function(){
-//             previewTile.remove();
-//         });
+    const btnClose = document.createElement("button");
+    btnClose.setAttribute("class","btn-close p-3 bd-highlight");
+    btnClose.type="button";
+    btnClose.ariaLabel="Close";
+    previewScreen.appendChild(btnClose);
 
-// });
-// }
+    btnClose.addEventListener("click",function(){
+        previewScreen.remove();
+        document.body.style.overflow = "auto";
+    });
+  });
+});
+
 let isLiked = false;
 heartIcon.forEach(function(icon) {
   icon.addEventListener("click", function() {
