@@ -3,7 +3,8 @@ let heartIcon = document.querySelectorAll(".fa-heart");
 let crl = document.getElementsByClassName("carouselItems");
 
 preview.forEach(function(myTile){
-  myTile.addEventListener("click",function(){
+  myTile.addEventListener("click",function(event){
+    if(event.target.closest(".fa-heart")){}else{
     let previewScreen = document.createElement("div");
     previewScreen.setAttribute("class", "container-lg previewScreen d-flex flex-row-reverse bd-highlight");
     document.body.appendChild(previewScreen);
@@ -19,13 +20,16 @@ preview.forEach(function(myTile){
     btnClose.addEventListener("click",function(){
         previewScreen.remove();
         document.body.style.overflow = "auto";
+
     });
+  }
   });
 });
 
 let isLiked = false;
 heartIcon.forEach(function(icon) {
   icon.addEventListener("click", function() {
+    
     console.log("klik!");
 
     if (!isLiked) {
