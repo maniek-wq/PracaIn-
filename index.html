@@ -15,10 +15,10 @@
     
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid " id="mainContainer">
   
     <section class="header sticky-top">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><span id="meet" style="color:black; font-size:1.5rem;">Meet</span><span id="Over" style="color:orange;font-size:1.5rem;">Over</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Support</a>
@@ -46,7 +46,8 @@
       </nav>
     </section>
 
-    <h3 class="header mt-4 places"style="width:100%; text-align:center;color:white;">Najczęściej odwiedzane miejsca!</h3>
+    <section class="carouselItems">
+    <h3 class="header mt-4 places"style="width:100%; text-align:center;color:black;">Najczęściej odwiedzane miejsca!</h3>
       <div id="carouselExampleCaptions" class="carousel slide mt-4" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -85,8 +86,9 @@
           <span class="visually-hidden">Next</span>
         </button> 
       </div>
-  
-      <div class="container mt-4 firstPlace"style="border-radius:15px;">
+    </section>
+
+      <div class="container mt-4 firstPlace anchor" id="tile"style="border-radius:15px;">
         
         <div class="jpg"><img src="img/halaOdra.png" alt="" srcset=""></div>
         <div class="info"><h5>Hala odra</h5><p>Bulwar Maurycego</p></div>
@@ -96,7 +98,8 @@
           <div class="col-1 nothing-1"></div>
         </div>
         </div>
-        <div class="container mt-4 firstPlace"style="border-radius:15px;">
+
+      <div class="container mt-4 firstPlace anchor"id="tile" style="border-radius:15px;">
         
           <div class="jpg"><img src="img/neon.jpg" alt="" srcset=""></div>
           <div class="info"><h5>Neon</h5><p>Deptak Bogusława</p></div>
@@ -106,7 +109,8 @@
             <div class="col-1 nothing-1"></div>
           </div>
           </div>
-          <div class="container mt-4 firstPlace"style="border-radius:15px;">
+
+          <div class="container mt-4 firstPlace anchor" id="tile"style="border-radius:15px;">
         
             <div class="jpg"><img src="img/goodmorning.jpg" alt="" srcset=""></div>
             <div class="info"><h5>Dzień dobry</h5><p>Plac Grunwaldzki</p></div>
@@ -116,13 +120,13 @@
               <div class="col-1 nothing-1"></div>
             </div>
             </div>
-
+         
       </div>
 
     
    
 
-  </div>
+  
 <!-- Pliki Cookies -->
      <button class="btn btn-primary cookie"style="left:" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="fa-solid fa-cookie-bite fa-beat"></i></button>
 

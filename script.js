@@ -1,47 +1,29 @@
-const rentButton = document.getElementById("btnradio1");
-const findButton = document.getElementById("btnradio2")
+let preview = document.getElementById("tile");
 
-let isRentScreenCreated = false;
-let isFindScreenCreated = false;
+isExisting = true;
+isCreated = false;
 
-// if (rentButton) {
-//     rentButton.addEventListener("click", function () {
-//         if (isFindScreenCreated) {
-//             findScreen.remove();
-//             isFindScreenCreated = false;
-//         }
+if(isExisting){
+  preview.addEventListener("click",function(){
+        console.log("klik!");
+        let con = document.getElementById("mainContainer");
+        let navbar = document.getElementById("nav")
+        const previewTile = document.createElement("div");
+        previewTile.setAttribute("class","previewTile");
+        previewTile.setAttribute("id","tileId")
+        navbar.appendChild(previewTile);
+        isCreated = true;
+        const closeButton = document.createElement("button");
+        closeButton.setAttribute("class","btn-close");
+        closeButton.setAttribute("id","myCloseBtn");
+        closeButton.ariaLabel="Close";
+        closeButton.type="button";
+        previewTile.appendChild(closeButton);
+        closeButton.addEventListener("click",function(){
+            previewTile.remove();
+        });
 
-//         if (!isRentScreenCreated) {
-//             let rentScreen = document.createElement("div");
-//             rentScreen.setAttribute("id", "rentScreen");
-//             rentScreen.setAttribute("class", "sticky-top");
-//             document.body.appendChild(rentScreen);
-//             isRentScreenCreated = true;
-//             rentScreen.textContent="Wynajmij jakiś lokal!";
-//             const rentingSite = document.createElement("section");
-//             rentingSite.setAttribute("class","container");
-//             rentScreen.appendChild(rentingSite);
-
-//         }
-        
-//     });
-// }
-
-// findButton.addEventListener("click", function () {
-//     if (isRentScreenCreated) {
-//         rentScreen.remove();
-//         isRentScreenCreated = false;
-//     }
-
-//     if (!isFindScreenCreated) {
-//         let findScreen = document.createElement("div");
-//         findScreen.setAttribute("id", "findScreen");
-//         document.body.appendChild(findScreen);
-//         isFindScreenCreated = true;
-//         findScreen.textContent = "Znajdź miejsce na imprezę!";
-        
-//     }
-// });
-
+});
+}
 
 
