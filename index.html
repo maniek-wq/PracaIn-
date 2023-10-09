@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <title>MeetOver</title>
+    
 </head>
 <body>
-
-  <section class="header sticky-top">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg">
+<div class="container-fluid">
+  
+    <section class="header sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><span id="clMeet">Meet</span><span id="clOver">Over</span></a>
+          <a class="navbar-brand" href="#"><span id="meet" style="color:black; font-size:1.5rem;">Meet</span><span id="Over" style="color:orange;font-size:1.5rem;">Over</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -26,180 +30,117 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Help</a>
+                <a class="nav-link" href="#">Support</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Offer
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Rent a place</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Find a place</a></li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Find Place</a>
               </li>
+              
             </ul>
-            <span class="navbar-text">
-              <a class="nav-link active" aria-current="page"href="#"
-              style="margin-left:20px;">Log in</a>
-            </span>
-            <span style="margin-left:15px;">|</span>
-            <span class="navbar-text">
-              <a class="nav-link active" aria-current="page"href="#"style="margin-left:10px;">Register</a>
-            </span>
-            <!-- <form class="d-flex">
+            <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
+            </form>
           </div>
         </div>
       </nav>
-      
-    </div>
-    
-  </section>
-  <!-- navbar -->
-<!-- Wynajmij i Znajdź buttony -->
-      <div class="d-flex justify-content-center align-items-center" style="width: 100%;">
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group" >
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked >
-            <label class="btn btn-outline-primary" for="btnradio1" style="margin-top:20px; ">Wynajmij</label>
-    
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio2" style="margin-top:20px;">Znajdź</label>
+    </section>
+
+    <h3 class="header mt-4 places"style="width:100%; text-align:center;color:white;">Najczęściej odwiedzane miejsca!</h3>
+      <div id="carouselExampleCaptions" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    </div>
-    <!-- Wynajmij i Znajdź buttony -->
-
-    <!-- Zawartość Wynajmowania -->
-    <div class="container-lg" id="mainContainer">
-      <div class="row" >
-        <div class="col-8" style=" height:80vh; ">
-
-          <!-- Przyciski w zawartości -->
-          <section class="myBtns d-flex" >
-          <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups" style="padding:20px;" >
-            <div class="btn-group me-2" role="group" aria-label="First group">
-              <button type="button" class="btn btn-outline-secondary">1</button>
-              <button type="button" class="btn btn-outline-secondary">2</button>
-              <button type="button" class="btn btn-outline-secondary">3</button>
-              <button type="button" class="btn btn-outline-secondary">4</button>
+        <div class="carousel-inner" style="color:white;">
+          <div class="carousel-item active">
+            <img src="img/halaOdra.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Hala Odra</h5>
+              <p>Bulwar Maurycego</p>
             </div>
-            <div class="input-group">
-              <div class="input-group-text" id="btnGroupAddon">@</div>
-              <input type="text" class="form-control" placeholder="Number of rooms" aria-label="Input group example" aria-describedby="btnGroupAddon">
-            </div>
-          
           </div>
-          <section style="padding:20px;">
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              From
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">25m^2</a></li>
-              <li><a class="dropdown-item" href="#">35m^2</a></li>
-              <li><a class="dropdown-item" href="#">40m^2</a></li>
-              <li><a class="dropdown-item" href="#">45m^2</a></li>
-              <li><a class="dropdown-item" href="#">50m^2</a></li>
-              <li><a class="dropdown-item" href="#">60+m^2</a></li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              To
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">35m^2</a></li>
-              <li><a class="dropdown-item" href="#">50m^2</a></li>
-              <li><a class="dropdown-item" href="#">60+m^2</a></li>
-             
-            </ul>
-          </div>
-        </section>
-      </section>
-
-      <!-- Przyciski w zawartości -->
-
-
-
-         <section class="container d-flex" id="offers" style="flex-direction:column; gap:20px;">
-            <div class="offer" id="pic1">
-              <img src="img/ballantines-drinks-finest-cola.webp" class="img-fluid" alt="...">
-              <div class="information">information A<i class="fa-regular fa-heart"></i></div>
+          <div class="carousel-item">
+            <img src="img/neon.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Neon</h5>
+              <p>Deptak Bogusława</p>
             </div>
-            <div class="offer" id="pic2">
-              <img src="img/ballantines-drinks-finest-cola.webp" class="img-fluid" alt="...">
-              <div class="information">information B<i class="fa-regular fa-heart"></i></div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/goodmorning.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Dzień dobry</h5>
+              <p>Plac Grunwaldzki.</p>
             </div>
-            <div class="offer" id="pic3">
-
-              <img src="img/ballantines-drinks-finest-cola.webp" class="img-fluid" alt="...">
-
-              <div class="information d-flex" style="width:100%; border:solid 1px black;">
-                <div class="row">
-                  <div class="col-md-8" style=><h3>$3,500 / Mo</h3><p>Wyszyńskiego 43A/3</p><p>Szczecin</p></div>
-                  <div class="col-6 col-md-4"><i class="fa-regular fa-heart"></i></div>
-                </div>
-                
-                
-              </div>
-
-              </div>
-            
-          </section>
+          </div>
         </div>
-        <div class="col"style="height:100%;">
-          
-          <div id="map" style="width: 105%; height: 80vh; border-radius:15px;"></div>
-          <script>
-            // Inicjalizacja mapy
-            var mymap = L.map('map').setView([51.5074, -0.1278], 12); // Współrzędne geograficzne i poziom przybliżenia
-    
-            // Dodaj podkładkę mapy (np. Mapbox Streets)
-            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-                    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                maxZoom: 18,
-                id: 'mapbox/streets-v11', // Możesz zmienić na inny styl z Mapbox
-                tileSize: 512,
-                zoomOffset: -1,
-                accessToken: 'TWOJ_ACCESS_TOKEN' // Wprowadź swój własny token Mapbox
-            }).addTo(mymap);
-    
-            // Dodaj znacznik na mapie
-            var marker = L.marker([51.5074, -0.1278]).addTo(mymap);
-            marker.bindPopup("Mój marker").openPopup();
-        </script>
-        </div>
-       
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button> 
       </div>
-    </div>
-<!-- Zawartość Wynajmowania -->
+  
+      <div class="container mt-4 firstPlace"style="border-radius:15px;">
+        
+        <div class="jpg"><img src="img/halaOdra.png" alt="" srcset=""></div>
+        <div class="info"><h5>Hala odra</h5><p>Bulwar Maurycego</p></div>
+        <div class="row">
+          <div class="col-3 heart"><i class="fa-regular fa-heart"></i></div>
+          <div class="col-1 nothing"></div>
+          <div class="col-1 nothing-1"></div>
+        </div>
+        </div>
+        <div class="container mt-4 firstPlace"style="border-radius:15px;">
+        
+          <div class="jpg"><img src="img/neon.jpg" alt="" srcset=""></div>
+          <div class="info"><h5>Neon</h5><p>Deptak Bogusława</p></div>
+          <div class="row">
+            <div class="col-3 heart"><i class="fa-regular fa-heart"></i></div>
+            <div class="col-1 nothing"></div>
+            <div class="col-1 nothing-1"></div>
+          </div>
+          </div>
+          <div class="container mt-4 firstPlace"style="border-radius:15px;">
+        
+            <div class="jpg"><img src="img/goodmorning.jpg" alt="" srcset=""></div>
+            <div class="info"><h5>Dzień dobry</h5><p>Plac Grunwaldzki</p></div>
+            <div class="row">
+              <div class="col-3 heart"><i class="fa-regular fa-heart"></i></div>
+              <div class="col-1 nothing"></div>
+              <div class="col-1 nothing-1"></div>
+            </div>
+            </div>
 
+      </div>
 
+    
+   
+
+  </div>
 <!-- Pliki Cookies -->
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="fa-solid fa-cookie-bite fa-beat"></i></button>
+     <button class="btn btn-primary cookie"style="left:" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="fa-solid fa-cookie-bite fa-beat"></i></button>
 
-
-
-<div class="offcanvas offcanvas-bottom text-bg-dark" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+<div class="offcanvas offcanvas-bottom text-bg-dark d-flex " tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
   <div class="offcanvas-header">
+
     <h3 class="offcanvas-title" id="offcanvasBottomLabel">Polityka prywatności</h3>
     <h6>Niniejsza Polityka Prywatności określa zasady gromadzenia, przetwarzania i przechowywania danych osobowych użytkowników naszej strony internetowej oraz korzystających z naszych usług. Dokładamy wszelkich starań, aby chronić prywatność naszych użytkowników i zabezpieczyć przekazywane nam dane osobowe.
     </h6>
-    <button type="button" class="btn-close text-bg-light p-3" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-theme="light" ></button>
+    <button type="button" class="btn-close text-bg-light p-1" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-theme="light" ></button>
   </div>
-  <div class="offcanvas-body small">
-    
-  </div>
+ 
 </div>
 
 <div class="rentScreen">
 
     
-</div>
+</div> 
 <!-- Pliki Cookies -->
       <script src="script.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

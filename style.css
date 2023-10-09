@@ -1,136 +1,84 @@
 *{
-    margin:0;
-    padding: 0;  
+    margin: 0;
+    padding: 0;
 }
 body{
-    height:200vh;
+    height:150vh;
+    background: linear-gradient(
+        0deg,
+        rgba(12, 173, 171, 1) 24%,
+        rgba(77, 240, 153, 1) 49%,
+        rgba(32, 178, 7, 1) 74%
+      );
+      background-blend-mode: darken;
 }
 .header{
-    width:100%;
-    background-image: linear-gradient(95deg, #f0d684 0, #edc774 16.67%, #e3b05e 33.33%, #d49442 50%, #c47728 66.67%, #ba6018 83.33%, #b54e13 100%);
-    
+    box-shadow: 1px 1px 10px 1px grey;
     border-radius: 0px 0px 20px 20px;
-    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    
 }
 
-body{
-    background-image: url("img/ballantines-drinks-finest-cola.webp"); 
-    background-color: #F2F2F2;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .navbar{
-    border-radius: 0px 0px 30px 30px;
-}
- .container-fluid{
-    background-color: #F2F2F2;
-    border-radius: 15px 15px 15px 15px;
-} 
-#clMeet{
-    color:orange;
-    font-size: 32px;
-}
-#clOver{
-    color:#000000;
-    font-size: 32px;
+    border-radius: 0px 0px 20px 20px;
 }
 
-ul{
-    font-size: 24px;
-}
-.form-control{
-    width:300px;
+.carousel .carousel-inner{
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 1px 2px 6px 3px gray;
 }
 
-#rentScreen,#findScreen{
-    width:80%;
-    height:80%;
+.firstPlace img{
+    width:80px;
+    height:80px;
+    padding:0;
+    border-radius: 15px;
+}
+
+
+
+.firstPlace{
+    display: flex;
+    box-shadow: 0px 0px 5px 3px grey;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    background-color: white;
+    height:100px;
+    gap:10px;
+}
+.firstPlace .jpg{
+    width:80px;
+    height:80px;
+   
+}
+
+.firstPlace .info{
+   
+    width:250px;
+    height:80px;
+}
+
+.row .heart{
+    width:70px;
+    
+}
+.cookie{
     position: fixed;
-    left:50%;
-    top:15%;
-    transform: translateX(-50%);
-    border-radius: 15px 15px 15px 15px;
-    z-index: 1;
-    background-color: #e3b05e;
-    opacity: .9;
-    animation: load 1.5s ;
-    -webkit-box-shadow: 4px 16px 28px -13px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 4px 16px 28px -13px rgba(66, 68, 90, 1);
-    box-shadow: 4px 16px 28px -13px rgba(66, 68, 90, 1);
-}
-
-@keyframes  load {
-    0%{
-        transform: translateX(100%);
-    }
-    100%{
-        transform: translateX(-50%);
-    }
-}
-#rentScreen{
-    text-align: center;
-    font-size: 24px;
-
-}
-#findScreen{
-  
-    text-align: center;
-    font-size: 24px;
-}
-
-.btn-primary{
-    position:fixed;
-    left:1%;
     bottom:1%;
+    left:1%;
+}
+
+.nothing, .nothing-1{
+    height:4vh;
+}
+
+.places{
+    margin-top: 30px;
+    box-shadow: none;
 }
 
 .offcanvas-header{
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
+    border:solid 1px white;
 }
-
-
-.dropdown-menu{
-   opacity: 1;
-}
-
-#log{
-    border:solid 1.5px black;
-    justify-self: flex-end;
-}
-
-#mainContainer{
-    background-color: white;
-    height:80vh;
-    border-radius: 15px;
-    margin-top:10px;
-    -webkit-box-shadow: 4px 16px 28px -13px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 4px 16px 28px -13px rgba(66, 68, 90, 1);
-    box-shadow: 4px 16px 28px -13px rgba(66, 68, 90, 1);
-}
-img{
-    width:200px;
-    height:200px;
-    border-radius: 20px;
-}
-#pic1,#pic2,#pic3{
-    width:100%;
-    height:200px;
-    background-color: white;
-    border-radius: 20px;
-    display: flex;
-    -webkit-box-shadow: 4px 16px 28px -13px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 4px 16px 28px -13px rgba(66, 68, 90, 1);
-    box-shadow: 4px 16px 28px -13px rgba(66, 68, 90, 1);
-}
-
-.information{
-
-}
-
-
