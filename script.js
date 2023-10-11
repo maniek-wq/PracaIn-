@@ -2,11 +2,13 @@ let preview = document.querySelectorAll("#tile");
 let heartIcon = document.querySelectorAll(".fa-heart");
 let crl = document.getElementsByClassName("carouselItems");
 
+
+
 preview.forEach(function(myTile){
   myTile.addEventListener("click",function(event){
     if(event.target.closest(".fa-heart")){}else{
     let previewScreen = document.createElement("div");
-    previewScreen.setAttribute("class", "container-lg previewScreen d-flex flex-row-reverse bd-highlight");
+    previewScreen.setAttribute("class", "container-lg previewScreen d-flex flex-row-reverse bd-highlight shadow-sm");
     document.body.appendChild(previewScreen);
     document.body.style.overflow = "hidden";
     // <button type="button" class="btn-close" aria-label="Close"></button>
@@ -26,6 +28,8 @@ preview.forEach(function(myTile){
   });
 });
 
+ 
+
 let isLiked = false;
 heartIcon.forEach(function(icon) {
   icon.addEventListener("click", function() {
@@ -39,6 +43,8 @@ heartIcon.forEach(function(icon) {
       icon.classList.add("fa-sharp");
       icon.classList.add("fa-solid");
       icon.classList.add("fa-heart");
+
+
       icon.style.color = "#e92907";
       isLiked = true;
       console.log(isLiked);
