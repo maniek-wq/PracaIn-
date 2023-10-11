@@ -56,3 +56,45 @@ heartIcon.forEach(function(icon) {
   });
 });
 
+
+
+// 
+let dot = document.querySelector(".fa-ellipsis");
+let hiddenSections = document.getElementsByClassName("hidden");
+let isShown = false;
+let eye = document.querySelector(".fa-eye-slash");
+
+
+dot.addEventListener("click", function() {
+  if (!isShown) {
+    console.log("klik!");
+    for (let i = 0; i < hiddenSections.length; i++) {
+      hiddenSections[i].classList.remove("d-none");
+    }
+    isShown = true;
+    dot.classList.add("d-none");
+
+    if (isShown) {
+      for (let i = 0; i < hiddenSections.length; i++) {
+        hiddenSections[i].classList.add("active");
+      }
+     
+      eye.classList.remove("d-none");
+      eye.classList.add("d-flex");
+      
+    }
+    eye.addEventListener("click",function(){
+        
+      for (let i = 0; i < hiddenSections.length; i++) {
+        hiddenSections[i].classList.add("d-none");
+      }
+      eye.classList.add("d-none");
+      dot.classList.remove("d-none");
+      dot.classList.add("d-flex");
+      isShown=false; 
+    
+    });
+  }
+});
+
+
