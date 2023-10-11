@@ -63,7 +63,7 @@ let dot = document.querySelector(".fa-ellipsis");
 let hiddenSections = document.getElementsByClassName("hidden");
 let isShown = false;
 let eye = document.querySelector(".fa-eye-slash");
-
+const a = document.getElementById("anim");
 
 dot.addEventListener("click", function() {
   if (!isShown) {
@@ -83,10 +83,10 @@ dot.addEventListener("click", function() {
       eye.classList.add("d-flex");
       
     }
-    eye.addEventListener("click",function(){
-        
+    eye.addEventListener("click",function(){    
+
       for (let i = 0; i < hiddenSections.length; i++) {
-        hiddenSections[i].classList.add("d-none");
+        hiddenSections[i].classList.add("unactive");  
       }
       eye.classList.add("d-none");
       dot.classList.remove("d-none");
