@@ -231,8 +231,9 @@ flex-direction: column;
     background-color: white;
     
   }
+  .offcanvas-body{
+  }
  .offcanvasContainer{
-    height:250px;
     background-image: url("./img/ballantines-drinks-finest-cola.webp");
     background-position: center;
     background-size: cover;
@@ -241,18 +242,41 @@ flex-direction: column;
     justify-items: center;
     flex-wrap: wrap;
     gap:5px;
-    border-radius: 15px;
+    height:60vh;
+    width:100%;
+    z-index: 0;
+    position: fixed;
     box-shadow: 1px 3px 6px 2px grey;
+    left:0;
+    top:0;
+    
   }
 
-.offcanvas-body .offcanvasContainer img{
-    height:100px;
-    width:100px;
-    padding:5px;
-}
+
 .fa-facebook{
     color:#3b5998;
+    /* position: fixed;
+    bottom:3%;
+    left:50%;
+    transform: translateX(-50%); */
+    
+    z-index: 2;
 }
 .fa-instagram{
     color:#E4405F;
+    
+   
+  
+    
 }
+.inf{
+    z-index: 1;
+    position: fixed;
+    background-color: white;
+    border:solid 2px lightsalmon;
+    height:70vh;
+    bottom: 0%;
+    left:0%;
+    border-radius: 40px 40px 0px 0px;
+}
+
