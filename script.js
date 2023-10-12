@@ -11,7 +11,7 @@ preview.forEach(function(myTile){
     previewScreen.setAttribute("class", "container-lg previewScreen d-flex flex-row-reverse bd-highlight shadow-sm");
     document.body.appendChild(previewScreen);
     document.body.style.overflow = "hidden";
-    // <button type="button" class="btn-close" aria-label="Close"></button>
+    
 
     const btnClose = document.createElement("button");
     btnClose.setAttribute("class","btn-close p-3 bd-highlight");
@@ -28,43 +28,66 @@ preview.forEach(function(myTile){
   });
 });
 
- 
+
+function popoverHearts() {
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl);
+  });
+}
 
 let isLiked = false;
+
+
+
 heartIcon.forEach(function(icon) {
   icon.addEventListener("click", function() {
-    
-    console.log("klik!");
 
-    if (!isLiked) {
-      
+    if (icon.classList.contains("unactive")) {
+      icon.classList.add("beat-animation");
       icon.classList.remove("fa-regular");
       icon.classList.remove("fa-heart");
       icon.classList.add("fa-sharp");
       icon.classList.add("fa-solid");
       icon.classList.add("fa-heart");
-
-
+      icon.classList.remove("unactive");
+      icon.classList.add("active");
       icon.style.color = "#e92907";
-      isLiked = true;
-      console.log(isLiked);
-    } else {
-      
-      icon.classList.remove("fa-sharp");
-      icon.classList.remove("fa-solid");
-      icon.classList.remove("fa-heart");
-      icon.classList.add("fa-regular");
-      icon.classList.add("fa-heart");
-      icon.style.color="rgb(30 48 80)";
-      isLiked = false;
-      console.log(isLiked);
-    }
+      icon.addEventListener("animationend", function() {
+        icon.classList.remove("beat-animation");
+      });
+    } 
+    
+   else if(icon.classList.contains("active")){
+            icon.classList.add("unactive");
+            icon.classList.remove("fa-sharp");
+            icon.classList.remove("fa-solid");
+            icon.classList.remove("fa-heart");
+            icon.classList.add("fa-regular");
+            icon.classList.add("fa-heart");
+            icon.classList.remove("active");
+            icon.style.color = "rgb(30 48 80)";
+            icon.classList.add("shake-animation");
+            icon.addEventListener("animationend", function() {
+              icon.classList.remove("shake-animation");
+            });
+      }
   });
+  
 });
 
 
 
-// 
+// data-bs-container="body" 
+// data-bs-toggle="popover" 
+// data-bs-placement="top" 
+// data-bs-content="Dodano do ulubionych"
+
+
+
+
+
+ 
 let dot = document.querySelector(".fa-ellipsis");
 let hiddenSections = document.getElementsByClassName("hidden");
 let isShown = false;
@@ -79,28 +102,28 @@ dot.addEventListener("click", function() {
     }
     isShown = true;
     dot.classList.add("d-none");
-
+    eye.classList.remove("d-none");
     if (isShown) {
       for (let i = 0; i < hiddenSections.length; i++) {
         hiddenSections[i].classList.add("active");
       }
      
-      eye.classList.remove("d-none");
-      eye.classList.add("d-flex");
-      
     }
-    eye.addEventListener("click",function(){    
-
-      for (let i = 0; i < hiddenSections.length; i++) {
-        hiddenSections[i].classList.add("unactive");  
-      }
-      eye.classList.add("d-none");
-      dot.classList.remove("d-none");
-      dot.classList.add("d-flex");
-      isShown=false; 
-    
-    });
   }
 });
+
+eye.addEventListener("click",function(){    
+  eye.classList.add("d-none");
+  
+  for (let i = 0; i < hiddenSections.length; i++) {
+    hiddenSections[i].classList.add("unactive");  
+    hiddenSections[i].classList.add("d-none"); 
+    hiddenSections[i].classList.remove("active"); 
+  }
+  dot.classList.remove("d-none");
+  isShown=false; 
+
+});
+
 
 
