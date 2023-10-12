@@ -28,14 +28,6 @@ preview.forEach(function(myTile){
   });
 });
 
-
-function popoverHearts() {
-  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl);
-  });
-}
-
 let isLiked = false;
 
 
@@ -51,14 +43,14 @@ heartIcon.forEach(function(icon) {
       icon.classList.add("fa-solid");
       icon.classList.add("fa-heart");
       icon.classList.remove("unactive");
-      icon.classList.add("active");
+      icon.classList.add("actives");
       icon.style.color = "#e92907";
       icon.addEventListener("animationend", function() {
         icon.classList.remove("beat-animation");
       });
     } 
     
-   else if(icon.classList.contains("active")){
+   else if(icon.classList.contains("actives")){
             icon.classList.add("unactive");
             icon.classList.remove("fa-sharp");
             icon.classList.remove("fa-solid");
