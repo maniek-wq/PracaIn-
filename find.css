@@ -223,10 +223,7 @@ flex-direction: column;
     animation: shake 0.5s ease;
   }
 
-  .btn-close{
-   
 
-  }
 
   .offcanvas .offcanvas-header{
     background-color: white;
@@ -285,3 +282,4 @@ flex-direction: column;
 
     width:80%;
 }
+

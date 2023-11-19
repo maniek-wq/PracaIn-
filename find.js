@@ -77,43 +77,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
- 
-let dot = document.querySelector(".fa-ellipsis");
-let hiddenSections = document.getElementsByClassName("hidden");
-let isShown = false;
-let eye = document.querySelector(".fa-eye-slash");
-const a = document.getElementById("anim");
+let searchInput = document.getElementsByClassName("form-control")[0];
+const searchButton = document.getElementById("button-addon2");
+let isTagExisting = false;
+let tiles = document.querySelectorAll('#tile');
 
-dot.addEventListener("click", function() {
-  if (!isShown) {
-    console.log("klik!");
-    for (let i = 0; i < hiddenSections.length; i++) {
-      hiddenSections[i].classList.remove("d-none");
-    }
-    isShown = true;
-    dot.classList.add("d-none");
-    eye.classList.remove("d-none");
-    if (isShown) {
-      for (let i = 0; i < hiddenSections.length; i++) {
-        hiddenSections[i].classList.add("active");
-      }
-     
-    }
-  }
+searchButton.addEventListener("click", function () {
+    console.log("szuka...");
+    console.log(searchInput.value);
+
+    tiles.forEach(function (tile) {
+        if (tile.classList.contains(searchInput.value)) {
+            console.log("Znaleziono kafelek o klasie:", searchInput.value);
+            // Tag znaleziony - nie musisz już używać isTagExisting
+            isTagExisting = true;
+            // Pokaż kafelek z odpowiednią klasą
+            tile.classList.remove("d-none");
+        } else {
+            // Ukryj kafelek bez odpowiedniej klasy
+            tile.classList.add("d-none");
+        }
+    });
 });
-
-eye.addEventListener("click",function(){    
-  eye.classList.add("d-none");
-  
-  for (let i = 0; i < hiddenSections.length; i++) {
-    hiddenSections[i].classList.add("unactive");  
-    hiddenSections[i].classList.add("d-none"); 
-    hiddenSections[i].classList.remove("active"); 
-  }
-  dot.classList.remove("d-none");
-  isShown=false; 
-
-});
-
-
 
