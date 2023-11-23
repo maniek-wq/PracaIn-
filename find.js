@@ -85,16 +85,16 @@ let tiles = document.querySelectorAll('#tile');
 searchButton.addEventListener("click", function () {
     console.log("szuka...");
     console.log(searchInput.value);
+    searchValue = searchInput.value;
+    console.log(searchValue + "Search value!!");
 
     tiles.forEach(function (tile) {
-        if (tile.classList.contains(searchInput.value)) {
+        if (tile.classList.contains(searchValue.toLowerCase())) {
             console.log("Znaleziono kafelek o klasie:", searchInput.value);
-            // Tag znaleziony - nie musisz już używać isTagExisting
-            isTagExisting = true;
-            // Pokaż kafelek z odpowiednią klasą
+            isTagExisting = true;           
             tile.classList.remove("d-none");
-        } else {
-            // Ukryj kafelek bez odpowiedniej klasy
+        } 
+        else {
             tile.classList.add("d-none");
         }
     });
