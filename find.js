@@ -1,10 +1,10 @@
 let preview = document.querySelectorAll("#tile");
 let heartIcon = document.querySelectorAll(".fa-heart");
 let crl = document.getElementsByClassName("carouselItems");
-
+let iterator = 0;
 
 let offcanvas = document.getElementById("offcanvasTop");
-console.log("Klasy offcanvasa "+ offcanvas.classList);
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const likedTiles = JSON.parse(localStorage.getItem('likedTiles')) || [];
@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         
         addToLiked(icon);
+        console.log("ID ikony po dodaniu do polubionych:", icon.getAttribute("data-unique-id"));
       } else if (icon.classList.contains("active")) {
         icon.classList.add("unactive");
         icon.classList.remove("fa-sharp");
@@ -49,33 +50,76 @@ document.addEventListener("DOMContentLoaded", function () {
 
         
         removeFromLiked(icon);
+        console.log("ID ikony po usunięciu z polubionych:", icon.getAttribute("data-unique-id"));
       }
     });
   });
 
   function addToLiked(icon) {
-    if (!likedTiles.includes(icon)) {
-      likedTiles.push(icon);
-      localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
+    if (!likedTiles.includes(icon.getAttribute("data-unique-id"))) {
+      likedTiles.push(icon.getAttribute("data-unique-id"));
+
     }
-    console.log(likedTiles);
+    if (!icon.getAttribute("data-unique-id")) {
+      iterator++;
+      const uniqueId = "id_" + iterator;
+      icon.setAttribute("data-unique-id", uniqueId);
+    }
+
+    localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
+
+   
   }
 
   function removeFromLiked(icon) {
-    const index = likedTiles.indexOf(icon);
+    const index = likedTiles.indexOf(icon.getAttribute("data-unique-id"));
     if (index !== -1) {
       likedTiles.splice(index, 1);
       localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
     }
-    console.log(likedTiles);
   }
 
-  
+  // Dodaj sprawdzenie atrybutów po załadowaniu strony
+  console.log("Atrybuty ikon na stronie:");
+  heartIcon.forEach(function (icon) {
+    console.log(icon.getAttribute("data-unique-id"));
+  });
+
   addToLiked(document.querySelector(".fa-heart"));
 });
 
 
 
+let bookmark = document.querySelector(".fa-bookmark");
+
+bookmark.addEventListener("click", function () {
+ 
+  const header = document.querySelector(".mainHeader");
+  const search = document.querySelector(".searchButton");
+  header.remove();
+  search.remove();
+
+  let likedScreen = document.createElement("div");
+  likedScreen.setAttribute("class", "likedScreen");
+  document.body.appendChild(likedScreen);
+
+  heartIcon.forEach(function (icon) {
+    const tileId = icon.getAttribute("data-unique-id");
+    const correspondingTile = document.querySelector("#tile");
+   
+   if (correspondingTile) {
+      if (icon.classList.contains("active")) {
+          correspondingTile.style.display="flex";
+      }
+      else if(icon.classList.contains("unactive")){
+        correspondingTile.remove();
+      }
+  }
+    
+
+
+  });
+});
 
 let searchInput = document.getElementsByClassName("form-control")[0];
 const searchButton = document.getElementById("button-addon2");
