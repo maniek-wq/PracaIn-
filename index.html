@@ -15,7 +15,7 @@
     
 </head>
 <body>
-<div class="container-fluid " id="mainContainer">
+
   
     <section class="header shadow-sm sticky-top" >
       <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
@@ -52,7 +52,7 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner" style="color:white;">
+        <div class="carousel-inner" style="border-radius:15px;">
           <div class="carousel-item active">
             <img src="img/halaOdra.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
@@ -79,167 +79,135 @@
     </section>
 
 <!-- TILES -->
-    <div class="container shadow-sm mt-4 firstPlace anchor " data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"id="tile">
+<div class="container shadow-sm mt-4 firstPlace urodziny wesele impreza" id="tile">
 
-      <div class="jpg"><img src="img/halaOdra.png" alt="" srcset=""></div>              
-      <div class="info d-flex">
-          <h5>Hala odra</h5>
-          <p >Bulwar Maurycego
-          <span style="font-weight:900; opacity:0.6"><br><i>1500 zł/noc</i></span></p>
-      </div>
-        <span><h6 class="badge bg-success" >Availble now</h6></span>
-        <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
-        
-        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" style="height:100vh;">
-          
-          <div class="container-fluid offcanvas-body">
-            <button type="button" class="btn-close ms-auto p-2 position-fixed" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-
-                  <div class="contaier-fluid offcanvasContainer  ">
-                  <div class="container-fluid d-flex inf">
-                    <div class="container-fluid mt-4 offcanvasInformation w-100">
-                      
-                      <h5 > O naszym miejscu
-                        
-                      
-                        <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+  <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="img/halaOdra.png" alt="" srcset=""></div>              
+  <div class="info d-flex">
+      <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Hala odra</h5>
+      <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Bulwar Maurycego
+      <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+  </div>
+    <span><h6 class="badge bg-danger" >Availble now</h6></span>
+    <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+    
+    <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
       
-                      </h5>
-                      <p>Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
-                      
-                      <h5 class="mt-2">Adres</h5>
-                      <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland <i class="fa-solid fa-location-dot fa-sm"></i></p>
-                      
-                      <h5 class="mt-2">Contact <span><a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-lg"></i></a>
-          
-                        <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-lg"></i></a></span></h5>
-                      <div class="in">
-                      <i><p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
-                 
-                    </div>
-                      <div class="d-grid gap-2 mt-5 d-flex justify-content-center">
-                        <button class="btn btn-primary myBtn" type="button" style="border-radius:30px;">Book now</button>
-                       
-                      </div>
-                      </div>
-                     
-                </div> 
-                </div>  
-          </div>
-        </div>
+      
+      <div class="offcanvas-body d-flex">
+        
+        <div class=" container info-Inside-Offcanvas d-flex">
 
+          
+            
+            <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+           
+          <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+          <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+          <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+            <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+            <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+            <h4 class="mt-2">Kontakt <span></i></span></h4>
+            <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+            <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+            <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+            <span class="mt-3 d-flex social"style="align-text:center;" >
+          <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+          <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+        </span>
+        </div>
+      </div>
     </div>
 
-    <div class="container shadow-sm mt-4 firstPlace anchor " data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"id="tile">
+</div> 
+<div class="container shadow-sm mt-4 firstPlace  komunia chrzest" id="tile">
 
-      <div class="jpg"><img src="img/halaOdra.png" alt="" srcset=""></div>              
-      <div class="info d-flex">
-          <h5>Hala odra</h5>
-          <p >Bulwar Maurycego
-          <span style="font-weight:900; opacity:0.6"><br><i>1500 zł/noc</i></span></p>
-      </div>
-        <span><h6 class="badge bg-danger" >Not available</h6></span>
-        <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
-        
-        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" style="height:100vh;">
-          
-          <div class="container-fluid offcanvas-body">
-            <button type="button" class="btn-close ms-auto p-2 position-fixed" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-
-                 <div class="contaier-fluid offcanvasContainer  ">
-                  <div class="container-fluid d-flex inf">
-                    <div class="container-fluid mt-4 offcanvasInformation w-100">
-                      
-                      <h5 > O naszym miejscu
-                        
-                      
-                        <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+  <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="img/halaOdra.png" alt="" srcset=""></div>              
+  <div class="info d-flex">
+      <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Hala odra</h5>
+      <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Bulwar Maurycego
+      <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+  </div>
+    <span><h6 class="badge bg-danger" >Availble now</h6></span>
+    <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+    
+    <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
       
-                      </h5>
-                      <p>Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
-                      
-                      <h5 class="mt-2">Adres</h5>
-                      <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland <i class="fa-solid fa-location-dot fa-sm"></i></p>
-                      
-                      <h5 class="mt-2">Contact <span><a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-lg"></i></a>
-          
-                        <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-lg"></i></a></span></h5>
-                      <div class="in">
-                      <i><p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
-                 
-                    </div>
-                      <div class="d-grid gap-2 mt-5 ">
-                        <button class="btn btn-primary myBtn" type="button" style="border-radius:30px;">Book now</button>
-                       
-                      </div>
-                      </div>
-                     
-                </div> 
-                </div> 
-          </div>
-        </div>
+      
+      <div class="offcanvas-body d-flex">
+        
+        <div class=" container info-Inside-Offcanvas d-flex">
 
+          
+            
+            <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+           
+          <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+          <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+          <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+            <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+            <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+            <h4 class="mt-2">Kontakt <span></i></span></h4>
+            <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+            <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+            <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+            <span class="mt-3 d-flex social"style="align-text:center;" >
+          <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+          <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+        </span>
+        </div>
+      </div>
     </div>
 
-    <div class="container shadow-sm mt-4 firstPlace anchor " data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"id="tile">
+</div>
+<div class="container shadow-sm mt-4 firstPlace urodziny stypa wesele" id="tile">
 
-      <div class="jpg"><img src="img/halaOdra.png" alt="" srcset=""></div>              
-      <div class="info d-flex">
-          <h5>Hala odra</h5>
-          <p >Bulwar Maurycego
-          <span style="font-weight:900; opacity:0.6"><br><i>1500 zł/noc</i></span></p>
-      </div>
-        <span><h6 class="badge bg-success" >Availble now</h6></span>
-        <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
-        
-        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" style="height:100vh;">
-          
-          <div class="container-fluid offcanvas-body">
-            <button type="button" class="btn-close ms-auto p-2 position-fixed" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-
-                 <div class="contaier-fluid offcanvasContainer  ">
-                  <div class="container-fluid d-flex inf">
-                    <div class="container-fluid mt-4 offcanvasInformation w-100">
-                      
-                      <h5 > O naszym miejscu
-                        
-                      
-                        <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+  <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="img/halaOdra.png" alt="" srcset=""></div>              
+  <div class="info d-flex">
+      <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Hala odra</h5>
+      <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Bulwar Maurycego
+      <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+  </div>
+    <span><h6 class="badge bg-success" >Availble now</h6></span>
+    <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+    
+    <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
       
-                      </h5>
-                      <p>Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
-                      
-                      <h5 class="mt-2">Adres</h5>
-                      <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland <i class="fa-solid fa-location-dot fa-sm"></i></p>
-                      
-                      <h5 class="mt-2">Contact <span><a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-lg"></i></a>
-          
-                        <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-lg"></i></a></span></h5>
-                      <div class="in">
-                      <i><p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
-                 
-                    </div>
-                      <div class="d-grid gap-2 mt-5 ">
-                        <button class="btn btn-primary myBtn" type="button" style="border-radius:30px;">Book now</button>
-                       
-                      </div>
-                      </div>
-                     
-                </div> 
-                </div> 
-          </div>
-        </div>
+      
+      <div class="offcanvas-body d-flex">
+        
+        <div class=" container info-Inside-Offcanvas d-flex">
 
-    </div>    
+          
+            
+            <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+           
+          <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+          <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+          <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+          <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+            <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+            <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+            <h4 class="mt-2">Kontakt <span></i></span></h4>
+            <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+            <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+            <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+            <span class="mt-3 d-flex social"style="align-text:center;" >
+          <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+          <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+        </span>
+        </div>
+      </div>
+    </div>
+
+</div>   
 
 
             
@@ -247,167 +215,135 @@
 
           <section class="hidden d-none" id="anim">
 
-            <div class="container shadow-sm mt-4 firstPlace anchor " data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"id="tile">
+            <div class="container shadow-sm mt-4 firstPlace urodziny wesele impreza" id="tile">
 
-              <div class="jpg"><img src="img/halaOdra.png" alt="" srcset=""></div>              
+              <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="img/halaOdra.png" alt="" srcset=""></div>              
               <div class="info d-flex">
-                  <h5>Hala odra</h5>
-                  <p >Bulwar Maurycego
-                  <span style="font-weight:900; opacity:0.6"><br><i>1500 zł/noc</i></span></p>
+                  <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Hala odra</h5>
+                  <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Bulwar Maurycego
+                  <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
               </div>
-                <span><h6 class="badge bg-danger" >Not available</h6></span>
+                <span><h6 class="badge bg-danger" >Availble now</h6></span>
                 <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
                 
-                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" style="height:100vh;">
+                <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
                   
-                  <div class="container-fluid offcanvas-body">
-                    <button type="button" class="btn-close ms-auto p-2 position-fixed" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  
+                  <div class="offcanvas-body d-flex">
+                    
+                    <div class=" container info-Inside-Offcanvas d-flex">
+      
+                      
+                        
+                        <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                       
+                      <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                      <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                      <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                      <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                      <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                      <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                        <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                        <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                        <h4 class="mt-2">Kontakt <span></i></span></h4>
+                        <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                        <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                        <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                        <span class="mt-3 d-flex social"style="align-text:center;" >
+                      <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                      <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+                    </span>
+                    </div>
+                  </div>
+                </div>
         
-                         <div class="contaier-fluid offcanvasContainer  ">
-                          <div class="container-fluid d-flex inf">
-                            <div class="container-fluid mt-4 offcanvasInformation w-100">
-                              
-                              <h5 > O naszym miejscu
-                                
-                              
-                                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                                  <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                                  <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                                  <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-              
-                              </h5>
-                              <p>Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
-                              
-                              <h5 class="mt-2">Adres</h5>
-                              <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland <i class="fa-solid fa-location-dot fa-sm"></i></p>
-                              
-                              <h5 class="mt-2">Contact <span><a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-lg"></i></a>
+            </div> 
+            <div class="container shadow-sm mt-4 firstPlace  komunia chrzest" id="tile">
+      
+              <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="img/halaOdra.png" alt="" srcset=""></div>              
+              <div class="info d-flex">
+                  <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Hala odra</h5>
+                  <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Bulwar Maurycego
+                  <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+              </div>
+                <span><h6 class="badge bg-danger" >Availble now</h6></span>
+                <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+                
+                <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
                   
-                                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-lg"></i></a></span></h5>
-                              <div class="in">
-                              <i><p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
-                         
-                            </div>
-                              <div class="d-grid gap-2 mt-5 ">
-                                <button class="btn btn-primary myBtn" type="button" style="border-radius:30px;">Book now</button>
-                               
-                              </div>
-                              </div>
-                             
-                        </div> 
-                        </div> 
+                  
+                  <div class="offcanvas-body d-flex">
+                    
+                    <div class=" container info-Inside-Offcanvas d-flex">
+      
+                      
+                        
+                        <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                       
+                      <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                      <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                      <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                      <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                      <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                      <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                        <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                        <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                        <h4 class="mt-2">Kontakt <span></i></span></h4>
+                        <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                        <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                        <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                        <span class="mt-3 d-flex social"style="align-text:center;" >
+                      <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                      <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+                    </span>
+                    </div>
                   </div>
                 </div>
         
             </div>
-        
-            <div class="container shadow-sm mt-4 firstPlace anchor " data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"id="tile">
-        
-              <div class="jpg"><img src="img/halaOdra.png" alt="" srcset=""></div>              
+            <div class="container shadow-sm mt-4 firstPlace urodziny stypa wesele" id="tile">
+      
+              <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="img/halaOdra.png" alt="" srcset=""></div>              
               <div class="info d-flex">
-                  <h5>Hala odra</h5>
-                  <p >Bulwar Maurycego
-                  <span style="font-weight:900; opacity:0.6"><br><i>1500 zł/noc</i></span></p>
-              </div>
-                <span><h6 class="badge bg-danger" >Not available</h6></span>
-                <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
-                
-                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" style="height:100vh;">
-                  
-                  <div class="container-fluid offcanvas-body">
-                    <button type="button" class="btn-close ms-auto p-2 position-fixed" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        
-                         <div class="contaier-fluid offcanvasContainer  ">
-                          <div class="container-fluid d-flex inf">
-                            <div class="container-fluid mt-4 offcanvasInformation w-100">
-                              
-                              <h5 > O naszym miejscu
-                                
-                              
-                                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                                  <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                                  <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                                  <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-              
-                              </h5>
-                              <p>Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
-                              
-                              <h5 class="mt-2">Adres</h5>
-                              <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland <i class="fa-solid fa-location-dot fa-sm"></i></p>
-                              
-                              <h5 class="mt-2">Contact <span><a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-lg"></i></a>
-                  
-                                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-lg"></i></a></span></h5>
-                              <div class="in">
-                              <i><p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
-                         
-                            </div>
-                              <div class="d-grid gap-2 mt-5 ">
-                                <button class="btn btn-primary myBtn" type="button" style="border-radius:30px;">Book now</button>
-                               
-                              </div>
-                              </div>
-                             
-                        </div> 
-                        </div> 
-                  </div>
-                </div>
-        
-            </div>
-        
-            <div class="container shadow-sm mt-4 firstPlace anchor " data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"id="tile">
-        
-              <div class="jpg"><img src="img/halaOdra.png" alt="" srcset=""></div>              
-              <div class="info d-flex">
-                  <h5>Hala odra</h5>
-                  <p >Bulwar Maurycego
-                  <span style="font-weight:900; opacity:0.6"><br><i>1500 zł/noc</i></span></p>
+                  <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Hala odra</h5>
+                  <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Bulwar Maurycego
+                  <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
               </div>
                 <span><h6 class="badge bg-success" >Availble now</h6></span>
                 <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
                 
-                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" style="height:100vh;">
+                <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
                   
-                  <div class="container-fluid offcanvas-body">
-                    <button type="button" class="btn-close ms-auto p-2 position-fixed" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        
-                         <div class="contaier-fluid offcanvasContainer  ">
-                          <div class="container-fluid d-flex inf">
-                            <div class="container-fluid mt-4 offcanvasInformation w-100">
-                              
-                              <h5 > O naszym miejscu
-                                
-                              
-                                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                                  <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                                  <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-                                  <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
-              
-                              </h5>
-                              <p>Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
-                              
-                              <h5 class="mt-2">Adres</h5>
-                              <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland <i class="fa-solid fa-location-dot fa-sm"></i></p>
-                              
-                              <h5 class="mt-2">Contact <span><a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-lg"></i></a>
                   
-                                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-lg"></i></a></span></h5>
-                              <div class="in">
-                              <i><p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
-                         
-                            </div>
-                              <div class="d-grid gap-2 mt-5 ">
-                                <button class="btn btn-primary myBtn" type="button" style="border-radius:30px;">Book now</button>
-                               
-                              </div>
-                              </div>
-                             
-                        </div> 
-                        </div> 
+                  <div class="offcanvas-body d-flex">
+                    
+                    <div class=" container info-Inside-Offcanvas d-flex">
+      
+                      
+                        
+                        <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                       
+                      <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                      <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                      <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                      <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                      <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                      <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                        <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                        <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                        <h4 class="mt-2">Kontakt <span></i></span></h4>
+                        <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                        <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                        <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                        <span class="mt-3 d-flex social"style="align-text:center;" >
+                      <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                      <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+                    </span>
+                    </div>
                   </div>
                 </div>
         
-            </div>  
+            </div> 
 
           </section>
           <i class="fa-solid fa-eye-slash fa-lg d-none justify-content-center mt-5"></i>
@@ -431,7 +367,7 @@
                 Get verified right away to get the best deals!
               </div>
             </div>
-      </div>
+      
 
 
       <script src="script.js"></script>

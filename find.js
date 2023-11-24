@@ -75,8 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!likedTiles.includes(icon.getAttribute("data-unique-id"))) {
       likedTiles.push(icon.getAttribute("data-unique-id"));
 
-    }//problem taki --- na początku pobier wartosc 0, po pierwszym kliknieciu powinno byc 1, ale ze iterator dodaje sie linie nizej, to iterator sie nie updatuje
-    //jak dodam iterator linie wyzej, to zaczyna liczyc polubione wartosci od 1
+    }
     if (!icon.getAttribute("data-unique-id")) {
       console.log(iterator);
       
@@ -95,8 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index !== -1) {
       likedTiles.splice(index, 1);
       localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
-      iterator--;
       likedIteration.textContent = iterator;
+      iterator--;
     }
   }
   
