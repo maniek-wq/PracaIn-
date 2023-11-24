@@ -4,7 +4,7 @@ let crl = document.getElementsByClassName("carouselItems");
 let iterator = 0;
 let bookmark = document.querySelector(".fa-bookmark");
 let offcanvas = document.getElementById("offcanvasTop");
-
+let i = 0;
 let likedIteration = document.getElementById("iter");
 
 
@@ -35,14 +35,15 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.addEventListener("animationend", function () {
           icon.classList.remove("beat-animation");
         });
-
-        
+        i++;
+        likedIteration.textContent = i;
         addToLiked(icon);
         if (parentTile) {
           parentTile.classList.add("active");
           }
         console.log("ID ikony po dodaniu do polubionych:", icon.getAttribute("data-unique-id"));
-      } else if (icon.classList.contains("active")) {
+      } 
+      else if (icon.classList.contains("active")) {
         icon.classList.add("unactive");
         icon.classList.remove("fa-sharp");
         icon.classList.remove("fa-solid");
@@ -74,12 +75,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!likedTiles.includes(icon.getAttribute("data-unique-id"))) {
       likedTiles.push(icon.getAttribute("data-unique-id"));
 
-    }
+    }//problem taki --- na początku pobier wartosc 0, po pierwszym kliknieciu powinno byc 1, ale ze iterator dodaje sie linie nizej, to iterator sie nie updatuje
+    //jak dodam iterator linie wyzej, to zaczyna liczyc polubione wartosci od 1
     if (!icon.getAttribute("data-unique-id")) {
+      console.log(iterator);
+      
       iterator++;
       const uniqueId = "id_" + iterator;
       icon.setAttribute("data-unique-id", uniqueId);
-      likedIteration.textContent = iterator;
     }
 
     localStorage.setItem('likedTiles', JSON.stringify(likedTiles));

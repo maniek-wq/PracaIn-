@@ -12,7 +12,7 @@ let hiddenSections = document.getElementsByClassName("hidden");
 let isShown = false;
 let eye = document.querySelector(".fa-eye-slash");
 const a = document.getElementById("anim");
-
+let i = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
   const likedTiles = JSON.parse(localStorage.getItem('likedTiles')) || [];
@@ -42,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
           icon.classList.remove("beat-animation");
         });
 
-        
+        i++;
+        likedIteration.textContent = i;
         addToLiked(icon);
         if (parentTile) {
           parentTile.classList.add("active");
@@ -82,10 +83,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
     if (!icon.getAttribute("data-unique-id")) {
+      
+      
       iterator++;
       const uniqueId = "id_" + iterator;
       icon.setAttribute("data-unique-id", uniqueId);
-      likedIteration.textContent = iterator;
     }
 
     localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
