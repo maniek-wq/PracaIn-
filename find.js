@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   heartIcon.forEach(function (icon) {
     icon.addEventListener("click", function () {
-        
+      const parentTile = findParentTile(icon);
        
       if (icon.classList.contains("unactive")) {
         icon.classList.add("beat-animation");
@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.remove("unactive");
         icon.classList.add("active");
         icon.style.color = "#e92907";
+
         
+        
+      //sprawdzic czy rodzic posiada element z aktywnym sercem
 
         icon.addEventListener("animationend", function () {
           icon.classList.remove("beat-animation");
@@ -33,6 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         
         addToLiked(icon);
+        if (parentTile) {
+          parentTile.classList.add("active");
+          }
         console.log("ID ikony po dodaniu do polubionych:", icon.getAttribute("data-unique-id"));
       } else if (icon.classList.contains("active")) {
         icon.classList.add("unactive");
@@ -44,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.remove("active");
         icon.style.color = "rgb(30 48 80)";
         icon.classList.add("shake-animation");
+      
         icon.addEventListener("animationend", function () {
           icon.classList.remove("shake-animation");
         });
@@ -51,6 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
         
         removeFromLiked(icon);
         console.log("ID ikony po usunięciu z polubionych:", icon.getAttribute("data-unique-id"));
+
+        
+        if (parentTile) {
+        parentTile.classList.remove("active");
+        }
+ 
       }
     });
   });
@@ -78,14 +91,23 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
     }
   }
-
-  // Dodaj sprawdzenie atrybutów po załadowaniu strony
-  console.log("Atrybuty ikon na stronie:");
-  heartIcon.forEach(function (icon) {
-    console.log(icon.getAttribute("data-unique-id"));
-  });
+  
 
   addToLiked(document.querySelector(".fa-heart"));
+
+  function findParentTile(element) {
+    let currentElement = element.parentElement;
+    while (currentElement) {
+      if (currentElement.classList.contains("firstPlace")) {
+        return currentElement;
+      }
+      console.log(currentElement);
+      currentElement = currentElement.parentElement;
+      
+    }
+    return null;
+  }
+
 });
 
 
@@ -102,23 +124,21 @@ bookmark.addEventListener("click", function () {
   let likedScreen = document.createElement("div");
   likedScreen.setAttribute("class", "likedScreen");
   document.body.appendChild(likedScreen);
-
-  heartIcon.forEach(function (icon) {
-    const tileId = icon.getAttribute("data-unique-id");
-    const correspondingTile = document.querySelector("#tile");
-   
-   if (correspondingTile) {
-      if (icon.classList.contains("active")) {
-          correspondingTile.style.display="flex";
-      }
-      else if(icon.classList.contains("unactive")){
-        correspondingTile.remove();
-      }
-  }
-    
-
-
-  });
+  const myHeader = document.createElement("h4");
+  likedScreen.appendChild(myHeader);
+  myHeader.textContent="Polubione miejsca";
+  myHeader.classList.add("myHeader");
+  
+ preview.forEach(function(showTileActive){
+    if(showTileActive.classList.contains("active")){
+      likedScreen.appendChild(showTileActive);
+      showTileActive.style.display="flex";
+    }
+    if(!showTileActive.classList.contains("active")){
+      showTileActive.remove();
+    }
+ });
+ 
 });
 
 let searchInput = document.getElementsByClassName("form-control")[0];
