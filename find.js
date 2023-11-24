@@ -2,8 +2,10 @@ let preview = document.querySelectorAll("#tile");
 let heartIcon = document.querySelectorAll(".fa-heart");
 let crl = document.getElementsByClassName("carouselItems");
 let iterator = 0;
-
+let bookmark = document.querySelector(".fa-bookmark");
 let offcanvas = document.getElementById("offcanvasTop");
+
+let likedIteration = document.getElementById("iter");
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -77,11 +79,12 @@ document.addEventListener("DOMContentLoaded", function () {
       iterator++;
       const uniqueId = "id_" + iterator;
       icon.setAttribute("data-unique-id", uniqueId);
+      likedIteration.textContent = iterator;
     }
 
     localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
-
-   
+    
+    
   }
 
   function removeFromLiked(icon) {
@@ -89,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index !== -1) {
       likedTiles.splice(index, 1);
       localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
+      iterator--;
+      likedIteration.textContent = iterator;
     }
   }
   
@@ -112,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-let bookmark = document.querySelector(".fa-bookmark");
+
 
 bookmark.addEventListener("click", function () {
  
@@ -127,8 +132,8 @@ bookmark.addEventListener("click", function () {
   const myHeader = document.createElement("h4");
   likedScreen.appendChild(myHeader);
   myHeader.textContent="Polubione miejsca";
-  myHeader.classList.add("myHeader");
-  
+  myHeader.classList.add("myHeader","mt-4");
+
  preview.forEach(function(showTileActive){
     if(showTileActive.classList.contains("active")){
       likedScreen.appendChild(showTileActive);
@@ -138,7 +143,7 @@ bookmark.addEventListener("click", function () {
       showTileActive.remove();
     }
  });
- 
+ bookmark.remove();
 });
 
 let searchInput = document.getElementsByClassName("form-control")[0];

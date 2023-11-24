@@ -1,10 +1,18 @@
 let preview = document.querySelectorAll("#tile");
 let heartIcon = document.querySelectorAll(".fa-heart");
 let crl = document.getElementsByClassName("carouselItems");
-
-
+let iterator = 0;
+let bookmark = document.querySelector(".fa-bookmark");
 let offcanvas = document.getElementById("offcanvasTop");
-console.log("Klasy offcanvasa "+ offcanvas.classList);
+
+let likedIteration = document.getElementById("iter");
+
+let dot = document.querySelector(".fa-ellipsis");
+let hiddenSections = document.getElementsByClassName("hidden");
+let isShown = false;
+let eye = document.querySelector(".fa-eye-slash");
+const a = document.getElementById("anim");
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const likedTiles = JSON.parse(localStorage.getItem('likedTiles')) || [];
@@ -13,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   heartIcon.forEach(function (icon) {
     icon.addEventListener("click", function () {
-        
+      const parentTile = findParentTile(icon);
        
       if (icon.classList.contains("unactive")) {
         icon.classList.add("beat-animation");
@@ -25,7 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.remove("unactive");
         icon.classList.add("active");
         icon.style.color = "#e92907";
+
         
+        
+      //sprawdzic czy rodzic posiada element z aktywnym sercem
 
         icon.addEventListener("animationend", function () {
           icon.classList.remove("beat-animation");
@@ -33,6 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         
         addToLiked(icon);
+        if (parentTile) {
+          parentTile.classList.add("active");
+          }
+        console.log("ID ikony po dodaniu do polubionych:", icon.getAttribute("data-unique-id"));
       } else if (icon.classList.contains("active")) {
         icon.classList.add("unactive");
         icon.classList.remove("fa-sharp");
@@ -43,46 +58,101 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.remove("active");
         icon.style.color = "rgb(30 48 80)";
         icon.classList.add("shake-animation");
+      
         icon.addEventListener("animationend", function () {
           icon.classList.remove("shake-animation");
         });
 
         
         removeFromLiked(icon);
+        console.log("ID ikony po usunięciu z polubionych:", icon.getAttribute("data-unique-id"));
+
+        
+        if (parentTile) {
+        parentTile.classList.remove("active");
+        }
+ 
       }
     });
   });
 
   function addToLiked(icon) {
-    if (!likedTiles.includes(icon)) {
-      likedTiles.push(icon);
-      localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
+    if (!likedTiles.includes(icon.getAttribute("data-unique-id"))) {
+      likedTiles.push(icon.getAttribute("data-unique-id"));
+
     }
-    console.log(likedTiles);
+    if (!icon.getAttribute("data-unique-id")) {
+      iterator++;
+      const uniqueId = "id_" + iterator;
+      icon.setAttribute("data-unique-id", uniqueId);
+      likedIteration.textContent = iterator;
+    }
+
+    localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
+    
+    
   }
 
   function removeFromLiked(icon) {
-    const index = likedTiles.indexOf(icon);
+    const index = likedTiles.indexOf(icon.getAttribute("data-unique-id"));
     if (index !== -1) {
       likedTiles.splice(index, 1);
       localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
+      iterator--;
+      likedIteration.textContent = iterator;
     }
-    console.log(likedTiles);
+  }
+  
+
+  addToLiked(document.querySelector(".fa-heart"));
+
+  function findParentTile(element) {
+    let currentElement = element.parentElement;
+    while (currentElement) {
+      if (currentElement.classList.contains("firstPlace")) {
+        return currentElement;
+      }
+      console.log(currentElement);
+      currentElement = currentElement.parentElement;
+      
+    }
+    return null;
   }
 
-  
-  addToLiked(document.querySelector(".fa-heart"));
+});
+
+bookmark.addEventListener("click", function () {
+
+ const rmCar = document.querySelector(".carouselItems");
+ rmCar.remove();
+const rmDots = document.getElementById("more");
+rmDots.remove();
+const rmWar = document.querySelector(".alert");
+rmWar.remove();
+
+  let likedScreen = document.createElement("div");
+  likedScreen.setAttribute("class", "likedScreen");
+  document.body.appendChild(likedScreen);
+  const myHeader = document.createElement("h4");
+  likedScreen.appendChild(myHeader);
+  myHeader.textContent="Polubione miejsca";
+  myHeader.classList.add("myHeader","mt-4");
+
+ preview.forEach(function(showTileActive){
+    if(showTileActive.classList.contains("active")){
+      likedScreen.appendChild(showTileActive);
+      showTileActive.style.display="flex";
+    }
+    if(!showTileActive.classList.contains("active")){
+      showTileActive.remove();
+    }
+ });
+ bookmark.remove();
 });
 
 
-
-
  
-let dot = document.querySelector(".fa-ellipsis");
-let hiddenSections = document.getElementsByClassName("hidden");
-let isShown = false;
-let eye = document.querySelector(".fa-eye-slash");
-const a = document.getElementById("anim");
+
 
 dot.addEventListener("click", function() {
   if (!isShown) {
