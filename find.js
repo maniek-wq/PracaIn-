@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
           icon.classList.remove("shake-animation");
         });
 
-        
+        i--;
+        likedIteration.textContent = i;
         removeFromLiked(icon);
         console.log("ID ikony po usunięciu z polubionych:", icon.getAttribute("data-unique-id"));
 
@@ -94,9 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index !== -1) {
       likedTiles.splice(index, 1);
       localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
-      likedIteration.textContent = iterator;
-      iterator--;
     }
+    
+    
   }
   
 
@@ -116,9 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
-
-
-
 
 
 bookmark.addEventListener("click", function () {
@@ -171,3 +169,28 @@ searchButton.addEventListener("click", function () {
     });
 });
 
+let reservationButton = document.querySelectorAll("#reserveButton");
+let offBody = document.querySelectorAll(".offcanvas-body");
+let insideOffcanvasBody = document.querySelectorAll(".info-Inside-Offcanvas");
+
+reservationButton.forEach(function(reserve){
+  reserve.addEventListener("click",function(){
+      console.log("klika!");
+      // usunięcie ciała
+      insideOffcanvasBody.forEach(function(removeBody){
+        removeBody.remove();
+      });
+      //tworze nowe ciało
+      let reserveBody = document.createElement("div");
+      reserveBody.classList.add("calendarBody");
+      
+      offBody.forEach(function(app){
+        app.appendChild(reserveBody);
+        let calendar = document.createElement("input");
+        calendar.type="date";
+        reserveBody.appendChild(calendar);
+      });
+      
+
+  });
+});
