@@ -64,7 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
           icon.classList.remove("shake-animation");
         });
 
-        
+        i--;
+        likedIteration.textContent = i;
         removeFromLiked(icon);
         console.log("ID ikony po usunięciu z polubionych:", icon.getAttribute("data-unique-id"));
 
@@ -100,8 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index !== -1) {
       likedTiles.splice(index, 1);
       localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
-      iterator--;
-      likedIteration.textContent = iterator;
+      
     }
   }
   
