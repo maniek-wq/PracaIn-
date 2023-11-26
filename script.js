@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.remove("unactive");
         icon.classList.add("active");
         icon.style.color = "#e92907";
-
+        
         
         
       //sprawdzic czy rodzic posiada element z aktywnym sercem
