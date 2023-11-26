@@ -24,10 +24,7 @@ body{
     box-shadow: none;
 }
 
-.offcanvas-header{
-    flex-direction: column;
-    border:solid 1px white;
-}
+
 
 .previewTile{
     
@@ -191,7 +188,9 @@ flex-direction: column;
     animation: shake 0.5s ease;
   }
 
-
+.offcanvas{
+  z-index: 10000;
+}
 
   .offcanvas .offcanvas-header{
     background-color: white;
@@ -200,7 +199,7 @@ flex-direction: column;
   .offcanvas-body{
     background-image: url("./img/ballantines-drinks-finest-cola.webp");
     background-position: center;
-    background-repeat: no-repeat;
+    
     background-size: cover;
 
     justify-content: center;
@@ -272,3 +271,8 @@ flex-direction: column;
   width:300px;
   background-color: yellow;
 }
+.modal-body{
+  flex-direction: column;
+  gap:10px;
+}
+

@@ -88,26 +88,47 @@
 
                       
                         <!-- modal-->
-                  <button type="button" class="btn btn-success mt-4 reserveButton" id="reserveButton" data-bs-toggle="modal" data-bs-target="#exampleModal">Zarezerwuj już teraz!</button>
+                  <button type="button" class="btn btn-success mt-4 reserveButton" id="reserveButton" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"" >Zarezerwuj już teraz!</button>
 
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Ostatnie kroki</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body d-flex align-items-center justify-content-center">
-                          <input type="date" >
-                        </div>
-                        <div class="modal-footer d-flex align-items-center justify-content-center">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-                          <button type="button" class="btn btn-primary">Zapisz zmiany</button>
+                  <section class="modalHidden" >
+                    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Ostatnie kroki</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body d-flex justify-content-center align-items-center">
+                            <h4>Wybierz datę</h4>
+                            <input type="date" name="" id="">
+                          </div>
+                          <div class="modal-footer d-flex justify-content-center align-items-center">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Zapisz zmiany</button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                
+
+                    
+                    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Udało się!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body" style="text-align:center;">
+                            Pomyślnie udało się zarezerwować lokal! <br> Więcej informacji znajdziesz na swojej poczcie elektronicznej.
+                          </div>
+                          <div class="modal-footer d-flex justify-content-center align-items-center">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                </section>
                     <!-- modal  -->
 
                   <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
