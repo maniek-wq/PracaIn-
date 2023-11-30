@@ -6,17 +6,17 @@ let bookmark = document.querySelector(".fa-bookmark");
 let offcanvas = document.getElementById("offcanvasTop");
 let i = 0;
 let likedIteration = document.getElementById("iter");
-
+let badge = document.querySelectorAll(".badge");
 
 document.addEventListener("DOMContentLoaded", function () {
-  const likedTiles = JSON.parse(localStorage.getItem('likedTiles')) || [];
+  const likedTiles = JSON.parse(localStorage.getItem("likedTiles")) || [];
 
   const heartIcon = document.querySelectorAll(".fa-heart");
 
   heartIcon.forEach(function (icon) {
     icon.addEventListener("click", function () {
       const parentTile = findParentTile(icon);
-       
+
       if (icon.classList.contains("unactive")) {
         icon.classList.add("beat-animation");
         icon.classList.remove("fa-regular");
@@ -28,9 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.add("active");
         icon.style.color = "#e92907";
 
-        
-        
-      //sprawdzic czy rodzic posiada element z aktywnym sercem
+        //sprawdzic czy rodzic posiada element z aktywnym sercem
 
         icon.addEventListener("animationend", function () {
           icon.classList.remove("beat-animation");
@@ -40,10 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
         addToLiked(icon);
         if (parentTile) {
           parentTile.classList.add("active");
-          }
-        console.log("ID ikony po dodaniu do polubionych:", icon.getAttribute("data-unique-id"));
-      } 
-      else if (icon.classList.contains("active")) {
+        }
+        console.log(
+          "ID ikony po dodaniu do polubionych:",
+          icon.getAttribute("data-unique-id")
+        );
+      } else if (icon.classList.contains("active")) {
         icon.classList.add("unactive");
         icon.classList.remove("fa-sharp");
         icon.classList.remove("fa-solid");
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.remove("active");
         icon.style.color = "rgb(30 48 80)";
         icon.classList.add("shake-animation");
-      
+
         icon.addEventListener("animationend", function () {
           icon.classList.remove("shake-animation");
         });
@@ -61,13 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
         i--;
         likedIteration.textContent = i;
         removeFromLiked(icon);
-        console.log("ID ikony po usunięciu z polubionych:", icon.getAttribute("data-unique-id"));
+        console.log(
+          "ID ikony po usunięciu z polubionych:",
+          icon.getAttribute("data-unique-id")
+        );
 
-        
         if (parentTile) {
-        parentTile.classList.remove("active");
+          parentTile.classList.remove("active");
         }
- 
       }
     });
   });
@@ -75,31 +76,25 @@ document.addEventListener("DOMContentLoaded", function () {
   function addToLiked(icon) {
     if (!likedTiles.includes(icon.getAttribute("data-unique-id"))) {
       likedTiles.push(icon.getAttribute("data-unique-id"));
-
     }
     if (!icon.getAttribute("data-unique-id")) {
       console.log(iterator);
-      
+
       iterator++;
       const uniqueId = "id_" + iterator;
       icon.setAttribute("data-unique-id", uniqueId);
     }
 
-    localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
-    
-    
+    localStorage.setItem("likedTiles", JSON.stringify(likedTiles));
   }
 
   function removeFromLiked(icon) {
     const index = likedTiles.indexOf(icon.getAttribute("data-unique-id"));
     if (index !== -1) {
       likedTiles.splice(index, 1);
-      localStorage.setItem('likedTiles', JSON.stringify(likedTiles));
+      localStorage.setItem("likedTiles", JSON.stringify(likedTiles));
     }
-    
-    
   }
-  
 
   addToLiked(document.querySelector(".fa-heart"));
 
@@ -111,16 +106,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       console.log(currentElement);
       currentElement = currentElement.parentElement;
-      
     }
     return null;
   }
-
 });
 
-
 bookmark.addEventListener("click", function () {
- 
   const header = document.querySelector(".mainHeader");
   const search = document.querySelector(".searchButton");
   header.remove();
@@ -131,62 +122,109 @@ bookmark.addEventListener("click", function () {
   document.body.appendChild(likedScreen);
   const myHeader = document.createElement("h4");
   likedScreen.appendChild(myHeader);
-  myHeader.textContent="Polubione miejsca";
-  myHeader.classList.add("myHeader","mt-4");
+  myHeader.textContent = "Polubione miejsca";
+  myHeader.classList.add("myHeader", "mt-4");
 
- preview.forEach(function(showTileActive){
-    if(showTileActive.classList.contains("active")){
+  preview.forEach(function (showTileActive) {
+    if (showTileActive.classList.contains("active")) {
       likedScreen.appendChild(showTileActive);
-      showTileActive.style.display="flex";
+      showTileActive.style.display = "flex";
     }
-    if(!showTileActive.classList.contains("active")){
+    if (!showTileActive.classList.contains("active")) {
       showTileActive.remove();
     }
- });
- bookmark.remove();
+  });
+  bookmark.remove();
 });
 
 let searchInput = document.getElementsByClassName("form-control")[0];
 const searchButton = document.getElementById("button-addon2");
 let isTagExisting = false;
-let tiles = document.querySelectorAll('#tile');
+let tiles = document.querySelectorAll("#tile");
 
 searchButton.addEventListener("click", function () {
-    console.log("szuka...");
-    console.log(searchInput.value);
-    searchValue = searchInput.value;
-    console.log(searchValue + "Search value!!");
+  console.log("szuka...");
+  console.log(searchInput.value);
+  searchValue = searchInput.value;
+  console.log(searchValue + "Search value!!");
 
-    tiles.forEach(function (tile) {
-        if (tile.classList.contains(searchValue.toLowerCase())) {
-            console.log("Znaleziono kafelek o klasie:", searchInput.value);
-            isTagExisting = true;           
-            tile.classList.remove("d-none");
-        } 
-        else {
-            tile.classList.add("d-none");
-        }
-    });
-});
-
-const modalButton = document.querySelectorAll(".reserveButton");
-modalButton.forEach(function(rm){
-  rm.addEventListener("click",function(){
-    let hidemModal = document.querySelectorAll("modal-backdrop","show");
-    hidemModal.forEach(function(hide){
-      hide.classList.remove("modal-backdrop");
-    });
+  tiles.forEach(function (tile) {
+    if (tile.classList.contains(searchValue.toLowerCase())) {
+      console.log("Znaleziono kafelek o klasie:", searchInput.value);
+      isTagExisting = true;
+      tile.classList.remove("d-none");
+    } else {
+      tile.classList.add("d-none");
+    }
   });
 });
 
+// function findFirstPlaceParent(element) {
+//   let parent = element.parentElement;
 
-const toastTrigger = document.getElementById('liveToastBtn')
-const toastLiveExample = document.getElementById('liveToast')
+//   while (parent !== null && !parent.classList.contains("firstPlace")) {
+//     parent = parent.parentElement;
+//   }
 
-if (toastTrigger) {
-  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-  toastTrigger.addEventListener('click', () => {
-    toastBootstrap.show()
-  })
+//   return parent;
+// }
+
+// const statusButtonParent = badge;
+// console.log(statusButtonParent);
+
+// function findBadge(element) {
+//   const children = element.children;
+
+//   for (let i = 0; i < children.length; i++) {
+//     const child = children[i];
+
+//     if (child.classList && child.classList.contains("bg-danger")) {
+//       return child;
+//     }
+
+//     const result = findBadge(child);
+
+//     if (result) {
+//       return result;
+//     }
+//   }
+
+//   return null;
+// }
+
+// const bgDangerChild = findBadge(statusButtonParent);
+
+// if (bgDangerChild) {
+//   console.log("Found bg-danger child:", bgDangerChild);
+// } else {
+//   console.log("No bg-danger child found.");
+// }
+const kafel = document.getElementById("tile");
+
+const modal = document.getElementById("checkButton");
+const successModal = document.getElementById("success");
+const failModal = document.getElementById("fail");
+const offcanvasPointer = document.getElementsByClassName("offcanvas");
+
+const offcanvasArray = Array.from(offcanvasPointer);
+console.log(offcanvasArray);
+
+// Check if kafel or its descendants contain an element with the class "bg-danger"
+const hasBgDangerElement = kafel.querySelector(".bg-danger") !== null;
+console.log(hasBgDangerElement);
+const hasBgSuccessElement = kafel.querySelector(".bg-success") !== null;
+
+function setAvailibility() {
+  if (hasBgDangerElement) {
+    successModal.classList.add("d-none");
+    failModal.classList.remove("d-none");
+    failModal.classList.add("d-flex");
+  } else if (hasBgSuccessElement) {
+    successModal.classList.remove("d-none");
+    successModal.classList.add("d-flex");
+    failModal.classList.remove("d-flex");
+    failModal.remove();
+  }
 }
 
+setAvailibility();
