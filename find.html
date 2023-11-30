@@ -183,7 +183,28 @@
                   <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
                   <button type="button" class="btn btn-success mt-4 reserveButton" id="reserveButton" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" >Zarezerwuj już teraz!</button>
 
-                 
+                 <script>
+                  const kafel = document.getElementById("tile");
+                  const successModal = document.getElementById("success");
+const failModal = document.getElementById("fail");
+                  const hasBgDangerElement = kafel.querySelector(".bg-danger") !== null;
+
+console.log(hasBgDangerElement);
+const hasBgSuccessElement = kafel.querySelector(".bg-success") !== null;
+                  function setAvailibility() {
+                    if (hasBgDangerElement) {
+                      successModal.classList.add("d-none");
+                      failModal.classList.remove("d-none");
+                      failModal.classList.add("d-flex");
+                    } else if (hasBgSuccessElement) {
+                      successModal.classList.remove("d-none");
+                      successModal.classList.add("d-flex");
+                      failModal.classList.remove("d-flex");
+                      failModal.remove();
+                    }
+                  }
+                  setAvailibility();
+                 </script>
                
                     
                   <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">

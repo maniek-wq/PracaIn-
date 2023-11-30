@@ -199,32 +199,6 @@ searchButton.addEventListener("click", function () {
 // } else {
 //   console.log("No bg-danger child found.");
 // }
-const kafel = document.getElementById("tile");
 
-const modal = document.getElementById("checkButton");
-const successModal = document.getElementById("success");
-const failModal = document.getElementById("fail");
-const offcanvasPointer = document.getElementsByClassName("offcanvas");
-
-const offcanvasArray = Array.from(offcanvasPointer);
-console.log(offcanvasArray);
-
-// Check if kafel or its descendants contain an element with the class "bg-danger"
-const hasBgDangerElement = kafel.querySelector(".bg-danger") !== null;
-console.log(hasBgDangerElement);
-const hasBgSuccessElement = kafel.querySelector(".bg-success") !== null;
-
-function setAvailibility() {
-  if (hasBgDangerElement) {
-    successModal.classList.add("d-none");
-    failModal.classList.remove("d-none");
-    failModal.classList.add("d-flex");
-  } else if (hasBgSuccessElement) {
-    successModal.classList.remove("d-none");
-    successModal.classList.add("d-flex");
-    failModal.classList.remove("d-flex");
-    failModal.remove();
-  }
-}
-
-setAvailibility();
+// const offcanvasArray = Array.from(offcanvasPointer);
+// console.log(offcanvasArray);
