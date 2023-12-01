@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="find.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Find Place</title>
+</head>
+<body>
+    <section class="header shadow-sm sticky-top" >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html"><span id="meet" style="color:black; font-size:1.5rem;">Meet</span><span id="Over" style="color:orange;font-size:1.5rem;">Over</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./support.html">Support</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./find.html">Find Place</a>
+                </li>
+                
+                
+              </ul>
+              
+            </div>
+          </div>
+        </nav>
+      </section>
+      <i class="fa-regular fa-bookmark fa-xl d-flex justify-content-end p-3 mt-4 position-fixed"style="right:0%"><span id="iter" style="font-size:12px; padding:5px">0</span></i>
+
+      <h4 class="mt-4 mainHeader" style="text-align:center;">Find your place</h4>
+      <div class="input-group mt-4 searchButton p-4">
+        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+      </div>
+
+
+
+
+
+
+
+        <div class="container shadow-sm mt-4 firstPlace hala odra urodziny wesele impreza drinks bar taniec rave" id="tile">
+          
+          <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/halaOdra.png" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Hala odra</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Bulwar Maurycego
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-danger" >Unavailble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex ">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+
+                      
+                        <!-- modal-->
+                  <button type="button" class="btn btn-success mt-4 reserveButton" id="reserveButton" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" >Zarezerwuj już teraz!</button>
+
+                 
+               
+                    
+                    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Ostatnie kroki!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body" style="text-align:center">
+                            <h3 >Wybierz termin!</h3>
+                            <input type="date" name="" id="" class="mt-3">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Wyjdź!</button>
+                            <button class="btn btn-primary" id="checkButton"data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Zapisz</button>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Udało się!</h1>
+                            <h1 class="modal-title fs-5 d-none" id="exampleModalToggleLabel2">Coś poszło nie tak :(</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body" id="success" style="text-align:center">
+                            Pomyślnie udało się zarezerwować lokal! <br> Więcej informacji znajdziesz na poczcie elektronicznej!
+                          </div>
+                          <div class="modal-body d-none" id="fail" style="text-align:center">
+                            Nie udało sie zarezerwować lokalu! <br> Więcej informacji znajdziesz na poczcie elektronicznej!
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Wyjdź!</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                  
+               
+                    <!-- modal  -->
+
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div> 
+       <div class="container shadow-sm mt-4 firstPlace  deptak neon shisha bar drinks " id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/neon.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Neon</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Deptak Bogusława
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-success" >Availble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="2" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4 reserveButton" id="reserveButton" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" >Zarezerwuj już teraz!</button>
+
+                 <script>
+                  const kafel = document.getElementById("tile");
+                  const successModal = document.getElementById("success");
+const failModal = document.getElementById("fail");
+                  const hasBgDangerElement = kafel.querySelector(".bg-danger") !== null;
+
+console.log(hasBgDangerElement);
+const hasBgSuccessElement = kafel.querySelector(".bg-success") !== null;
+                  function setAvailibility() {
+                    if (hasBgDangerElement) {
+                      successModal.classList.add("d-none");
+                      failModal.classList.remove("d-none");
+                      failModal.classList.add("d-flex");
+                    } else if (hasBgSuccessElement) {
+                      successModal.classList.remove("d-none");
+                      successModal.classList.add("d-flex");
+                      failModal.classList.remove("d-flex");
+                      failModal.remove();
+                    }
+                  }
+                  setAvailibility();
+                 </script>
+               
+                    
+                  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Ostatnie kroki!</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="text-align:center">
+                          <h3 >Wybierz termin!</h3>
+                          <input type="date" name="" id="" class="mt-3">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Wyjdź!</button>
+                          <button class="btn btn-primary" id="checkButton"data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Zapisz</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Udało się!</h1>
+                          <h1 class="modal-title fs-5 d-none" id="exampleModalToggleLabel2">Coś poszło nie tak :(</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="success" style="text-align:center">
+                          Pomyślnie udało się zarezerwować lokal! <br> Więcej informacji znajdziesz na poczcie elektronicznej!
+                        </div>
+                        <div class="modal-body d-none" id="fail" style="text-align:center">
+                          Nie udało sie zarezerwować lokalu! <br> Więcej informacji znajdziesz na poczcie elektronicznej!
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Wyjdź!</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+      <div class="container shadow-sm mt-4 firstPlace urodziny Dzień dobry śniadanie sniadanie obiad kolacja dining randka" id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/goodmorning.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Dzień dobry</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Śląska
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-success" >Availble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+      <div class="container shadow-sm mt-4 firstPlace kolacja restauracja luksus karkut centrum stek randka vip " id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/karkut.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Karkut</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+              Bogurodzicy 1
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-danger" >Unavailble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div> 
+      <div class="container shadow-sm mt-4 firstPlace  club klub nocny taniec bar impreza parkiet palarnia vip city hall" id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/city.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">City Hall</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">3 Maja 21
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-success" >Availble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+      <div class="container shadow-sm mt-4 firstPlace klub nocny student students pan panie parkiet bar alkohol palarnia coyote club deptak" id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/coyote.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Coyote Club</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Deptak Bogusława
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-success" >Availble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+      <div class="container shadow-sm mt-4 firstPlace club klub nocny parkiet bar exclusive eksluzywny old dla starszych elegancki impreza taniec deptak" id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/grey.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Grey Club</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Deptak Bogusława
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-danger" >Unavailble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div> 
+      <div class="container shadow-sm mt-4 firstPlace urodziny bar restauracja palarnia jedzenie zeberka żeberka ribs piwo nowy browar " id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/nowyBrowar.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Nowy Browar</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Partyzantów 2
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-success" >Availble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+      <div class="container shadow-sm mt-4 firstPlace  impreza shisha dragon fajka wodna bar alkohol gry planszówki" id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/dragon.png" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Dragon Shisha</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Wyszyńskiego 
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-success" >Availble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+      <div class="container shadow-sm mt-4 firstPlace shoty dobre bar alkohol szoty drinki deptak" id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/dobreShoty.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Dobre Shoty</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Deptak Bogusława
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-danger" >Unavailble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div> 
+      <div class="container shadow-sm mt-4 firstPlace urodziny impreza shisha drinki drinks shoty deptak bar" id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/thePtak.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">The Ptak i Pies</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Deptak Bogusława 
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-success" >Availble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+      <div class="container shadow-sm mt-4 firstPlace  club klub pinokio impreza vip nocny parkiet bar alkohol shoty shot szoty drinki palarnia" id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/pinokio.jpg" alt="" srcset=""></div>              
+        <div class="info d-flex">
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Pionkio</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Władysława Sikorskiego
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+        </div>
+          <span><h6 class="badge bg-success" >Availble now</h6></span>
+          <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
+          
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            
+            
+            <div class="offcanvas-body d-flex">
+              
+              <div class=" container info-Inside-Offcanvas d-flex">
+
+                
+                  
+                  <button type="button" class="btn fa-solid fa-chevron-left fa-xl mt-4" style="height:max-content;width:max-content;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 
+                <h4 class="d-flex align-self-center mt-3">O naszym miejscu</h4>
+                <span class="d-flex align-self-center mt-3"><i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i>
+                <i class="fa-solid fa-star fa-xs" style="color: #ffea00;"></i></span>
+                <p class="mt-3"style="text-align:center;">Restauracja położona nad rzeką oferuje wyjątkowe doświadczenie kulinarno-widokowe. Goście mogą cieszyć się pysznymi potrawami, jednocześnie podziwiając malowniczy krajobraz rzeki i otaczającej przyrody. To idealne miejsce na romantyczną kolację lub relaksujący posiłek na świeżym powietrzu</p>
+                  <h4 class="mt-2">Adres <span><i class="fa-solid fa-location-dot fa-sm"></i></span></h4>
+                  <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
+                  <h4 class="mt-2">Kontakt <span></i></span></h4>
+                  <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
+                  <button type="button" class="btn btn-success mt-4">Zarezerwuj już teraz!</button>
+                  <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
+                  <span class="mt-3 d-flex social"style="align-text:center;" >
+                <a href="https://www.instagram.com/Halaodra?fbclid=IwAR2NgzykUfQyTOCHva6I1g5vW7fDpeq-r5EOMmM14gQXxGtrZxKVDRMJJSA"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com/halaodra"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              </span>
+              </div>
+            </div>
+          </div>
+  
+      </div> 
+     
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="find.js"></script>
+</body>
+</html>
