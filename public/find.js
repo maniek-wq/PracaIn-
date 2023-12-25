@@ -98,18 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   addToLiked(document.querySelector(".fa-heart"));
-
-  function findParentTile(element) {
-    let currentElement = element.parentElement;
-    while (currentElement) {
-      if (currentElement.classList.contains("firstPlace")) {
-        return currentElement;
-      }
-      console.log(currentElement);
-      currentElement = currentElement.parentElement;
-    }
-    return null;
-  }
 });
 
 bookmark.addEventListener("click", function () {
@@ -160,15 +148,58 @@ searchButton.addEventListener("click", function () {
   });
 });
 
-// Skrypt klienta (find.js)
-fetch("/api/tiles")
-  .then((response) => response.json())
-  .then((data) => {
-    // Iteruj po danych i wyświetl ID w konsoli
-    data.forEach((tile) => {
-      console.log("ID kafelka:", tile._id);
-      //dodaje id do kazdego tile
-      //i mam indywidualne kafle w bazie danych
-    });
-  })
-  .catch((error) => console.error("Błąd:", error));
+function findParentTile(element) {
+  let currentElement = element.parentElement;
+  while (currentElement) {
+    if (currentElement.classList.contains("firstPlace")) {
+      return currentElement;
+    }
+    currentElement = currentElement.parentElement;
+  }
+  return null;
+}
+
+// const dateButtons = document.querySelectorAll("#checkButton");
+
+// dateButtons.forEach(function (element) {
+//   // Załóżmy, że findParentTile() to funkcja, która znajduje rodzica z klasą firstPlace
+//   let parentTile = findParentTile(element);
+
+//   // Sprawdzenie, czy parentTile nie jest null przed użyciem querySelector
+//   if (parentTile) {
+//     let isHavingChild = parentTile.querySelector(".bg-danger") !== null;
+
+//     // Ustawienie atrybutu data-bs-target w zależności od wyniku
+//     if (isHavingChild) {
+//       console.log("znaleziono kafel" + parentTile.classList);
+//       element.dataset.bsTarget = "#fail";
+//       console.log(element.dataset.bsTarget);
+//     }
+//     if (!isHavingChild) {
+//       console.log("znaleziono kafel" + parentTile.classList);
+//       element.dataset.bsTarget = "#success";
+//       console.log(element.dataset.bsTarget);
+//     }
+//   } else {
+//     console.error("Nie znaleziono rodzica z klasą firstPlace.");
+//   }
+// });
+
+// if (isHavingChild) {
+//   dateButtons.dataset.bsTarget = "#exampleModalToggle2";
+// } else {
+//   dateButtons.dataset.bsTarget = "#exampleModalToggle3";
+// }
+
+// // Skrypt klienta (find.js)
+// fetch("/api/tiles")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // Iteruj po danych i wyświetl ID w konsoli
+//     data.forEach((tile) => {
+//       console.log("ID kafelka:", tile._id);
+//       //dodaje id do kazdego tile
+//       //i mam indywidualne kafle w bazie danych
+//     });
+//   })
+//   .catch((error) => console.error("Błąd:", error));

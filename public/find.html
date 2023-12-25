@@ -61,7 +61,7 @@
             <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Bulwar Maurycego
             <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
         </div>
-          <span><h6 class="badge bg-danger" >Unavailble now</h6></span>
+          <span><h6 class="badge bg-success" >Availble now</h6></span>
           <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
           
           <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
@@ -117,22 +117,20 @@
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Udało się!</h1>
-                            <h1 class="modal-title fs-5 d-none" id="exampleModalToggleLabel2">Coś poszło nie tak :(</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Udało się!</h1>                            
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body" id="success" style="text-align:center">
                             Pomyślnie udało się zarezerwować lokal! <br> Więcej informacji znajdziesz na poczcie elektronicznej!
-                          </div>
-                          <div class="modal-body d-none" id="fail" style="text-align:center">
-                            Nie udało sie zarezerwować lokalu! <br> Więcej informacji znajdziesz na poczcie elektronicznej!
-                          </div>
+                          </div>                    
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Wyjdź!</button>
                           </div>
                         </div>
                       </div>
                     </div>
+
+               
                     
                     
                   
@@ -149,18 +147,20 @@
           </div>
   
       </div> 
-       <div class="container shadow-sm mt-4 firstPlace  deptak neon shisha bar drinks " id="tile">
 
-        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/neon.jpg" alt="" srcset=""></div>              
+
+     <div class="container shadow-sm mt-4 firstPlace  deptak neon shisha bar drinks " id="tile">
+
+        <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop1" aria-controls="staticBackdrop1"><img src="./img/neon.jpg" alt="" srcset=""></div>              
         <div class="info d-flex">
-            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Neon</h5>
-            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Deptak Bogusława
-            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><br><i>1500 zł/noc</i></span></p>
+            <h5 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop1" aria-controls="staticBackdrop1">Neon</h5>
+            <p data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop1" aria-controls="staticBackdrop1">Deptak Bogusława
+            <span style="font-weight:900; opacity:0.6"data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop1" aria-controls="staticBackdrop1"><br><i>1500 zł/noc</i></span></p>
         </div>
-          <span><h6 class="badge bg-success" >Availble now</h6></span>
+          <span><h6 class="badge bg-danger" >Unavailble now</h6></span>
           <i class="fa-regular fa-heart unactive " id="heartIcon"></i>
           
-          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="2" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+          <div class="offcanvas offcanvas-start w-100" data-bs-backdrop="static" tabindex="2" id="staticBackdrop1" aria-labelledby="staticBackdropLabel">
             
             
             <div class="offcanvas-body d-flex">
@@ -181,33 +181,10 @@
                   <p>ul.Bulwar Maurycego Beniowskiego 5 , Szczecin, Poland</p>
                   <h4 class="mt-2">Kontakt <span></i></span></h4>
                   <p><i class="fa-solid fa-phone fa-sm"></i> 535 253 602 <br> <i class="fa-regular fa-envelope fa-sm"></i> dobragrupadsspzoo@gmail.com</p></i>
-                  <button type="button" class="btn btn-success mt-4 reserveButton" id="reserveButton" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" >Zarezerwuj już teraz!</button>
 
-                 <script>
-                  const kafel = document.getElementById("tile");
-                  const successModal = document.getElementById("success");
-const failModal = document.getElementById("fail");
-                  const hasBgDangerElement = kafel.querySelector(".bg-danger") !== null;
+                  <button type="button" class="btn btn-success mt-4 reserveButton" id="reserveButton" data-bs-target="#reserve" data-bs-toggle="modal" >Zarezerwuj już teraz!</button>
 
-console.log(hasBgDangerElement);
-const hasBgSuccessElement = kafel.querySelector(".bg-success") !== null;
-                  function setAvailibility() {
-                    if (hasBgDangerElement) {
-                      successModal.classList.add("d-none");
-                      failModal.classList.remove("d-none");
-                      failModal.classList.add("d-flex");
-                    } else if (hasBgSuccessElement) {
-                      successModal.classList.remove("d-none");
-                      successModal.classList.add("d-flex");
-                      failModal.classList.remove("d-flex");
-                      failModal.remove();
-                    }
-                  }
-                  setAvailibility();
-                 </script>
-               
-                    
-                  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                  <div class="modal fade" id="reserve" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -220,33 +197,37 @@ const hasBgSuccessElement = kafel.querySelector(".bg-success") !== null;
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Wyjdź!</button>
-                          <button class="btn btn-primary" id="checkButton"data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Zapisz</button>
-                          
+
+                          <!-- open second modal -->
+                          <button class="btn btn-primary" id="checkButton"data-bs-target="#fail" data-bs-toggle="modal">Zapisz</button>
+                          <!-- open second modal -->
+
+                       
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Udało się!</h1>
-                          <h1 class="modal-title fs-5 d-none" id="exampleModalToggleLabel2">Coś poszło nie tak :(</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body" id="success" style="text-align:center">
-                          Pomyślnie udało się zarezerwować lokal! <br> Więcej informacji znajdziesz na poczcie elektronicznej!
-                        </div>
-                        <div class="modal-body d-none" id="fail" style="text-align:center">
-                          Nie udało sie zarezerwować lokalu! <br> Więcej informacji znajdziesz na poczcie elektronicznej!
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Wyjdź!</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                     <!-- second modal body -->
+
+                          <div class="modal fade" id="fail" aria-hidden="true" aria-labelledby="failedLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="failedLabel">Coś poszło nie tak!</h1>                            
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="success" style="text-align:center">
+                                 Nie udało się zarezerwować lokalu! <br> Więcej informacji znajdziesz na poczcie elektronicznej!
+                                </div>                    
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Wyjdź!</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- second modal body -->
                   
                   <h4 class = "mt-4"style="text-align:center;">Znajdziesz nas też tutaj!</h4>
                   <span class="mt-3 d-flex social"style="align-text:center;" >
@@ -257,8 +238,11 @@ const hasBgSuccessElement = kafel.querySelector(".bg-success") !== null;
             </div>
           </div>
   
-      </div>
-      <div class="container shadow-sm mt-4 firstPlace urodziny Dzień dobry śniadanie sniadanie obiad kolacja dining randka" id="tile">
+      </div> 
+
+
+      
+      <!-- <div class="container shadow-sm mt-4 firstPlace urodziny Dzień dobry śniadanie sniadanie obiad kolacja dining randka" id="tile">
 
         <div class="jpg" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><img src="./img/goodmorning.jpg" alt="" srcset=""></div>              
         <div class="info d-flex">
@@ -688,7 +672,7 @@ const hasBgSuccessElement = kafel.querySelector(".bg-success") !== null;
             </div>
           </div>
   
-      </div> 
+      </div>  -->
      
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
