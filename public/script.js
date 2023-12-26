@@ -123,6 +123,8 @@ bookmark.addEventListener("click", function () {
   rmDots.remove();
   const rmWar = document.querySelector(".alert");
   rmWar.remove();
+  const rmFoorter = document.getElementById("footer");
+  rmFoorter.remove();
 
   let likedScreen = document.createElement("div");
   likedScreen.setAttribute("class", "likedScreen");

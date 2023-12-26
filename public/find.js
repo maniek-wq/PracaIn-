@@ -105,6 +105,8 @@ bookmark.addEventListener("click", function () {
   const search = document.querySelector(".searchButton");
   header.remove();
   search.remove();
+  const rmFoorter = document.getElementById("footer");
+  rmFoorter.remove();
 
   let likedScreen = document.createElement("div");
   likedScreen.setAttribute("class", "likedScreen");
