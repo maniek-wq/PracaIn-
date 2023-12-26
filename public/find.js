@@ -138,7 +138,8 @@ searchButton.addEventListener("click", function () {
   console.log(searchInput.value);
   searchValue = searchInput.value;
   console.log(searchValue + "Search value!!");
-
+  const rmFooter = document.getElementById("footer");
+  rmFooter.remove();
   tiles.forEach(function (tile) {
     if (tile.classList.contains(searchValue.toLowerCase())) {
       console.log("Znaleziono kafelek o klasie:", searchInput.value);
