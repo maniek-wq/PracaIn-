@@ -224,9 +224,7 @@ body {
 }
 
 .info-Inside-Offcanvas {
-  background-color: white;
   border-radius: 15px 15px 15px 15px;
-  opacity: 0.95;
   flex-direction: column;
 }
 .social {
@@ -249,4 +247,10 @@ body {
 .modal-body {
   flex-direction: column;
   gap: 10px;
+}
+
+.info-Inside-Offcanvas {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.2);
+  border: solid 0.5px #f2f2f2;
 }

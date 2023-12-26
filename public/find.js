@@ -197,7 +197,7 @@ function SendMail(placeName) {
       console.log("Success! " + res.status);
     });
 }
-
+let lowDelay = 1000;
 sendButton.addEventListener("click", function () {
   console.log("klik");
   let placeName = sendButton.getAttribute("data-place-name");
@@ -213,6 +213,9 @@ sendButton.addEventListener("click", function () {
     createSpinner(sendButton);
 
     sendButton.textContent = "Sukces!";
+    setTimeout(function () {
+      sendButton.textContent = "Wyślij!";
+    }, lowDelay);
   }, delay);
 });
 
