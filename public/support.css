@@ -1,28 +1,59 @@
+body {
+  background-image: url("img/bg_bggenerator_com.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.form {
+  background-color: #fbfbfb;
 
-.carousel-control-prev{
-   
+  border-radius: 15px;
+  flex-direction: column;
+}
+img {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+}
+.btn .btn-success {
+  align-self: center;
+}
+#calendar {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fa-instagram {
+  color: #e4405f;
+}
+.social {
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
 }
 
-img{
-    width:100%;
-    height:300px;
-    border-radius: 15px;
+footer {
+  height: 10rem;
+  text-align: center;
+  background-color: #fafafa;
+  border-radius: 25px 25px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.btn .btn-success{
-    align-self: center;
-    
+
+.socials {
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
 }
-#calendar{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+.navbar {
+  border-radius: 0px 0px 25px 25px;
+  background-color: none;
 }
-.fa-instagram{
-    color:#E4405F;  
+.header {
+  border-radius: 0px 0px 25px 25px;
 }
-.social{
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    gap:20px;
-  }
