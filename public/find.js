@@ -158,6 +158,63 @@ function findParentTile(element) {
   }
   return null;
 }
+let sendButton = document.getElementById("sendButton");
+let delay = 1500;
+
+function createSpinner(appendElement) {
+  let spinner = document.createElement("span");
+  spinner.classList.add("spinner-border");
+  spinner.classList.add("spinner-border-sm");
+  spinner.setAttribute("aria-hidden", "true");
+  spinner.setAttribute("id", "spinner");
+  appendElement.appendChild(spinner);
+}
+let emailValue = document.getElementById("email_id").value;
+let messageValue = document.getElementById("message").value;
+let dateValue = document.getElementById("date").value;
+let fromTimeValue = document.getElementById("startTime").value;
+let toTimeValue = document.getElementById("endTime").value;
+
+function SendMail(placeName) {
+  if (!emailValue || !dateValue) {
+    console.log("Wprowadź adres e-mail i wiadomość przed wysłaniem.");
+
+    return;
+  }
+
+  let params = {
+    email_id: emailValue,
+    message: messageValue,
+    date: dateValue,
+    place: placeName,
+    since: fromTimeValue,
+    to: toTimeValue,
+  };
+
+  emailjs
+    .send("service_ul8bste", "template_3w483ke", params)
+    .then(function (res) {
+      console.log("Success! " + res.status);
+    });
+}
+
+sendButton.addEventListener("click", function () {
+  console.log("klik");
+  let placeName = sendButton.getAttribute("data-place-name");
+
+  SendMail(placeName);
+  console.log("Email:" + emailValue);
+
+  sendButton.textContent = "";
+  createSpinner(sendButton);
+
+  // Po opóźnieniu przywróć klasę "d-none" dla elementu spinnera i tekstu ładowania
+  setTimeout(function () {
+    createSpinner(sendButton);
+
+    sendButton.textContent = "Sukces!";
+  }, delay);
+});
 
 // const dateButtons = document.querySelectorAll("#checkButton");
 
