@@ -158,7 +158,7 @@ function findParentTile(element) {
   }
   return null;
 }
-let sendButton = document.getElementById("sendButton");
+let sendButton = document.querySelectorAll("#sendButton");
 let delay = 1500;
 
 function createSpinner(appendElement) {
@@ -197,59 +197,30 @@ function SendMail(placeName) {
       console.log("Success! " + res.status);
     });
 }
+
 let lowDelay = 1000;
-sendButton.addEventListener("click", function () {
-  console.log("klik");
-  let placeName = sendButton.getAttribute("data-place-name");
+sendButton.forEach(function (e) {
+  e.addEventListener("click", function () {
+    console.log("klik");
+    let placeName = e.getAttribute("data-place-name");
 
-  SendMail(placeName);
-  console.log("Email:" + emailValue);
+    SendMail(placeName);
+    console.log("Email:" + emailValue);
 
-  sendButton.textContent = "";
-  createSpinner(sendButton);
+    e.textContent = "";
+    createSpinner(e);
 
-  // Po opóźnieniu przywróć klasę "d-none" dla elementu spinnera i tekstu ładowania
-  setTimeout(function () {
-    createSpinner(sendButton);
-
-    sendButton.textContent = "Sukces!";
+    // Po opóźnieniu przywróć klasę "d-none" dla elementu spinnera i tekstu ładowania
     setTimeout(function () {
-      sendButton.textContent = "Wyślij!";
-    }, lowDelay);
-  }, delay);
+      createSpinner(e);
+
+      e.textContent = "Sukces!";
+      setTimeout(function () {
+        e.textContent = "Wyślij!";
+      }, lowDelay);
+    }, delay);
+  });
 });
-
-// const dateButtons = document.querySelectorAll("#checkButton");
-
-// dateButtons.forEach(function (element) {
-//   // Załóżmy, że findParentTile() to funkcja, która znajduje rodzica z klasą firstPlace
-//   let parentTile = findParentTile(element);
-
-//   // Sprawdzenie, czy parentTile nie jest null przed użyciem querySelector
-//   if (parentTile) {
-//     let isHavingChild = parentTile.querySelector(".bg-danger") !== null;
-
-//     // Ustawienie atrybutu data-bs-target w zależności od wyniku
-//     if (isHavingChild) {
-//       console.log("znaleziono kafel" + parentTile.classList);
-//       element.dataset.bsTarget = "#fail";
-//       console.log(element.dataset.bsTarget);
-//     }
-//     if (!isHavingChild) {
-//       console.log("znaleziono kafel" + parentTile.classList);
-//       element.dataset.bsTarget = "#success";
-//       console.log(element.dataset.bsTarget);
-//     }
-//   } else {
-//     console.error("Nie znaleziono rodzica z klasą firstPlace.");
-//   }
-// });
-
-// if (isHavingChild) {
-//   dateButtons.dataset.bsTarget = "#exampleModalToggle2";
-// } else {
-//   dateButtons.dataset.bsTarget = "#exampleModalToggle3";
-// }
 
 // // Skrypt klienta (find.js)
 // fetch("/api/tiles")

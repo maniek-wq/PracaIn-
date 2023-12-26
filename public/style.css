@@ -1,121 +1,102 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-body{
-  
-  background-color: #F2F2F2;
-
-   
+body {
+  background-color: #f2f2f2;
 }
-.header{
+.header {
   box-shadow: 1px 1px 10px 1px grey;
   border-radius: 0px 0px 20px 20px;
-  
 }
 
-.navbar{
+.navbar {
   border-radius: 0px 0px 20px 20px;
 }
 
-
-.places{
+.places {
   margin-top: 30px;
   box-shadow: none;
 }
 
-.offcanvas-header{
+.offcanvas-header {
   flex-direction: column;
-  border:solid 1px white;
+  border: solid 1px white;
 }
 
-.previewTile{
-  z-index:3;
-  width:100%;
-  height:100vh;
+.previewTile {
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
   background-color: white;
 }
 
-.firstPlace img{
-  width:80px;
-  height:80px;
-  padding:0;
+.firstPlace img {
+  width: 80px;
+  height: 80px;
+  padding: 0;
   border-radius: 20px;
 }
 
-.firstPlace{
+.firstPlace {
   display: flex;
-  gap:20px;
+  gap: 20px;
   align-items: center;
   justify-items: center;
   background-color: white;
-  border-radius:20px;
+  border-radius: 20px;
   width: 100%;
 }
 
-
-
-.info{
-margin-top: 15px;
-width:150px;
-flex-direction: column;
- 
+.info {
+  margin-top: 15px;
+  width: 150px;
+  flex-direction: column;
 }
 
-
-
-
-
-
-
-
-.fa-heart{
+.fa-heart {
   margin-bottom: 3px;
-  z-index:99;
+  z-index: 99;
 }
 
-
-
-.previewScreen{
-  z-index:3;
+.previewScreen {
+  z-index: 3;
   position: fixed;
-  top:80px;
-  height:85vh;
+  top: 80px;
+  height: 85vh;
   background-color: white;
-  width:90%;
-  transform: translateX(5%);   
+  width: 90%;
+  transform: translateX(5%);
   border-radius: 15px;
- -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-  animation: slideUp .3s linear;
+  animation: slideUp 0.3s linear;
 }
-
 
 @keyframes slideUp {
   0% {
-      transform: translateY(100%);
-      transform: translateX(100%);
+    transform: translateY(100%);
+    transform: translateX(100%);
   }
   100% {
-      transform: translateY(0);
-      transform: translateX(5%);
+    transform: translateY(0);
+    transform: translateX(5%);
   }
 }
 
-.fa-ellipsis{
-  border:solid;
-  width:30px;
-  margin-left:50%;
+.fa-ellipsis {
+  border: solid;
+  width: 30px;
+  margin-left: 50%;
   transform: translateX(-50%);
   border-radius: 15px;
   opacity: 0.7;
 }
 
-.fa-ellipsis:hover{
+.fa-ellipsis:hover {
   opacity: 1;
 }
-
 
 @keyframes slideDown {
   0% {
@@ -130,43 +111,38 @@ flex-direction: column;
   animation: slideDown 0.3s linear;
 }
 
-
 @keyframes slideUpTile {
   0% {
-  transform: translateY(0%);
-  opacity:1;
+    transform: translateY(0%);
+    opacity: 1;
   }
   100% {
     transform: translateY(-70%);
-    opacity:0;
+    opacity: 0;
   }
 }
 
-
-.fa-eye-slash{
-  opacity:0.7;
-  margin-left:50%;
+.fa-eye-slash {
+  opacity: 0.7;
+  margin-left: 50%;
   transform: translateX(-50%);
 }
-.fa-eye-slash:hover{
-  opacity:1;
+.fa-eye-slash:hover {
+  opacity: 1;
 }
 
-
-
-
 @keyframes beat {
-  0%,100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.5);
-    
   }
 }
 
 .beat-animation {
-  animation: beat .5s linear;
+  animation: beat 0.5s linear;
 }
 
 @keyframes shake {
@@ -191,74 +167,328 @@ flex-direction: column;
   animation: shake 0.5s ease;
 }
 
-
-
-.offcanvas .offcanvas-header{
+.offcanvas .offcanvas-header {
   background-color: white;
-  
 }
-.offcanvas-body{
+.offcanvas-body {
   background-image: url("./img/ballantines-drinks-finest-cola.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   justify-content: center;
-    align-items: center;
-    justify-items: center;
+  align-items: center;
+  justify-items: center;
 }
 
-
-.fa-facebook{
-  color:#3b5998;
+.fa-facebook {
+  color: #3b5998;
   z-index: 2;
 }
-.fa-instagram{
-  color:#E4405F;  
+.fa-instagram {
+  color: #e4405f;
 }
 
-.inf{
+.inf {
   z-index: 1;
   position: fixed;
-  background-color: white;   
-  height:60vh;
+  background-color: white;
+  height: 60vh;
   bottom: 5%;
-  left:0%;
+  left: 0%;
   border-radius: 40px 40px 0px 0px;
 }
 
-.myBtn{
-  width:80%;
+.myBtn {
+  width: 80%;
 }
 
-.likedScreen{
-width:100%;
-
+.likedScreen {
+  width: 100%;
 }
 
-.myHeader{
-text-align: center;
+.myHeader {
+  text-align: center;
 }
 
-.btn-close{
-display: flex;
-align-self: flex-start;
-justify-content: flex-end;
-align-items: flex-end;
-
+.btn-close {
+  display: flex;
+  align-self: flex-start;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
-.info-Inside-Offcanvas{
-
-background-color: white;
-border-radius: 15px 15px 15px 15px;
-opacity: 0.95;
-flex-direction: column;
+.info-Inside-Offcanvas {
+  background-color: white;
+  border-radius: 15px 15px 15px 15px;
+  opacity: 0.95;
+  flex-direction: column;
 }
-.social{
-justify-content: center;
-align-items: center;
-justify-items: center;
-gap:20px;
-padding:20px;
+.social {
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: lightgray; /* Kolor kciuka przewijania */
+  border-radius: 15px;
+}
+
+.header {
+  box-shadow: 1px 1px 10px 1px grey;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.navbar {
+  border-radius: 0px 0px 20px 20px;
+}
+
+.places {
+  margin-top: 30px;
+  box-shadow: none;
+}
+
+.previewTile {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+.firstPlace img {
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  border-radius: 20px;
+}
+
+.firstPlace {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.info {
+  margin-top: 15px;
+  width: 150px;
+  flex-direction: column;
+}
+
+.fa-heart {
+  margin-bottom: 3px;
+}
+
+.previewScreen {
+  position: fixed;
+  top: 80px;
+  height: 85vh;
+  background-color: white;
+  width: 90%;
+  transform: translateX(5%);
+  border-radius: 15px;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+#sendButton {
+  animation: showOnDelay 0.5s linear;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateY(0);
+    transform: translateX(5%);
+  }
+}
+
+@keyframes showOnDelay {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fa-ellipsis {
+  border: solid;
+  width: 30px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  opacity: 0.7;
+}
+
+.fa-ellipsis:hover {
+  opacity: 1;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hidden.active {
+  animation: slideDown 0.3s linear;
+}
+
+@keyframes slideUpTile {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-70%);
+    opacity: 0;
+  }
+}
+
+.fa-eye-slash {
+  opacity: 0.7;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.fa-eye-slash:hover {
+  opacity: 1;
+}
+
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.beat-animation {
+  animation: beat 0.5s linear;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.5s ease;
+}
+
+.offcanvas {
+  z-index: 10000;
+}
+
+.offcanvas .offcanvas-header {
+  background-color: white;
+}
+.offcanvas-body {
+  background-image: url("./img/ballantines-drinks-finest-cola.webp");
+  background-position: center;
+
+  background-size: cover;
+
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+.fa-instagram {
+  color: #e4405f;
+}
+
+.inf {
+  position: fixed;
+  background-color: white;
+  height: 60vh;
+  bottom: 5%;
+  left: 0%;
+  border-radius: 40px 40px 0px 0px;
+}
+
+.myBtn {
+  width: 80%;
+}
+
+.likedScreen {
+  width: 100%;
+}
+
+.myHeader {
+  text-align: center;
+}
+
+.btn-close {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-Inside-Offcanvas {
+  border-radius: 15px 15px 15px 15px;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.2);
+  height: 90vh;
+  overflow: scroll;
+}
+.social {
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.calendarBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  height: 300px;
+  width: 300px;
+  background-color: yellow;
+}
+.modal-body {
+  flex-direction: column;
+  gap: 10px;
 }
